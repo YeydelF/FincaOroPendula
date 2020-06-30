@@ -57,6 +57,7 @@
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblecha = new System.Windows.Forms.Label();
+            this.holaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -79,7 +80,7 @@
             this.PTop.Controls.Add(this.btnMin);
             this.PTop.Controls.Add(this.msMenu);
             this.PTop.Location = new System.Drawing.Point(0, 0);
-            this.PTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PTop.Margin = new System.Windows.Forms.Padding(4);
             this.PTop.Name = "PTop";
             this.PTop.Size = new System.Drawing.Size(1199, 62);
             this.PTop.TabIndex = 0;
@@ -167,7 +168,8 @@
             this.actividadesToolStripMenuItem,
             this.lotesToolStripMenuItem,
             this.cicloToolStripMenuItem,
-            this.sesiónToolStripMenuItem});
+            this.sesiónToolStripMenuItem,
+            this.holaToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(11, 30);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
@@ -183,7 +185,7 @@
             this.controlDeGastosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.controlDeGastosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.controlDeGastosToolStripMenuItem.Name = "controlDeGastosToolStripMenuItem";
-            this.controlDeGastosToolStripMenuItem.Size = new System.Drawing.Size(135, 21);
+            this.controlDeGastosToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.controlDeGastosToolStripMenuItem.Text = "Control de gastos";
             // 
             // manejoDePlantacionesToolStripMenuItem
@@ -202,7 +204,7 @@
             this.eliminarToolStripMenuItem});
             this.insumosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
-            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(76, 21);
+            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
             this.insumosToolStripMenuItem.Text = "Insumos";
             // 
             // agregarToolStripMenuItem
@@ -231,7 +233,7 @@
             this.eliminarToolStripMenuItem1});
             this.actividadesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.actividadesToolStripMenuItem.Name = "actividadesToolStripMenuItem";
-            this.actividadesToolStripMenuItem.Size = new System.Drawing.Size(98, 21);
+            this.actividadesToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
             this.actividadesToolStripMenuItem.Text = "Actividades ";
             // 
             // agregarToolStripMenuItem1
@@ -255,7 +257,7 @@
             this.eliminiarToolStripMenuItem});
             this.lotesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.lotesToolStripMenuItem.Name = "lotesToolStripMenuItem";
-            this.lotesToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
+            this.lotesToolStripMenuItem.Size = new System.Drawing.Size(56, 26);
             this.lotesToolStripMenuItem.Text = "Lotes";
             // 
             // actualizarToolStripMenuItem1
@@ -284,7 +286,7 @@
             this.editarToolStripMenuItem});
             this.cicloToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cicloToolStripMenuItem.Name = "cicloToolStripMenuItem";
-            this.cicloToolStripMenuItem.Size = new System.Drawing.Size(53, 21);
+            this.cicloToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
             this.cicloToolStripMenuItem.Text = "Ciclo";
             // 
             // agregarToolStripMenuItem3
@@ -306,7 +308,7 @@
             this.cerrarSesiónToolStripMenuItem});
             this.sesiónToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.sesiónToolStripMenuItem.Name = "sesiónToolStripMenuItem";
-            this.sesiónToolStripMenuItem.Size = new System.Drawing.Size(65, 21);
+            this.sesiónToolStripMenuItem.Size = new System.Drawing.Size(65, 26);
             this.sesiónToolStripMenuItem.Text = "Sesión";
             // 
             // cerrarSesiónToolStripMenuItem
@@ -339,6 +341,12 @@
             this.lblecha.Text = "label1";
             this.lblecha.Click += new System.EventHandler(this.lblecha_Click);
             // 
+            // holaToolStripMenuItem
+            // 
+            this.holaToolStripMenuItem.Name = "holaToolStripMenuItem";
+            this.holaToolStripMenuItem.Size = new System.Drawing.Size(51, 26);
+            this.holaToolStripMenuItem.Text = "hola ";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -350,7 +358,7 @@
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.msMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPrincipal";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -400,6 +408,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblecha;
+        private System.Windows.Forms.ToolStripMenuItem holaToolStripMenuItem;
     }
 }
 
