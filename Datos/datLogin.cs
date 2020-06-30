@@ -13,7 +13,7 @@ namespace Datos
         Conexion con = new Conexion();
         public string AbrirSesion(string accion, string KeyName, string Passwd, string ip, int idUsuario,string fecha)
         {
-
+            con.conexion.Close();
             MySqlCommand com = new MySqlCommand();
             MySqlParameter res;
             try
@@ -31,19 +31,24 @@ namespace Datos
                 res = com.Parameters.AddWithValue("respuesta", "");
                 com.Parameters["respuesta"].Direction = ParameterDirection.Output;
                 com.ExecuteNonQuery();
-
+               
                 return res.Value.ToString();
+
                 //return "realizado";
             }
             catch (MySqlException ex)
             {
                 //Console.WriteLine(ex);
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("MySqlException "+ex.ToString());
+                con.conexion.Close();
                 return "ERROR";
+
             }
             catch (Exception ex1)
             {
-                MessageBox.Show(ex1.ToString());
+                con.conexion.Close();
+                MessageBox.Show("Excepcion global"+ex1.ToString());
+               
                 return "ERROR";
             }
 

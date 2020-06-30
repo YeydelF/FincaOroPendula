@@ -34,12 +34,12 @@ namespace Datos
         }
         public DataTable Datos(string Sql)
         {
-            DataTable dt = new DataTable();
+            DataTable datatable = new DataTable();
             MySqlCommand comm = new MySqlCommand(Sql, con.conexion);
             MySqlDataAdapter da = new MySqlDataAdapter(comm);
-            da.Fill(dt);
+            da.Fill(datatable);
 
-            return dt;
+            return datatable;
         }
 
     }
