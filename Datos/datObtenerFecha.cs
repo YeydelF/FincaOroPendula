@@ -14,6 +14,18 @@ namespace Datos
             string fe = DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss");
             return fe;
         }
+        public string ObtenerFechaSinHora()
+        {
+            //DateTime fecha =  DateTime.Today;
+            string fe = DateTime.Now.ToString("dd-MM-yyyy");
+            return fe;
+        }
+        public string ObtenerHora()
+        {
+            //DateTime fecha =  DateTime.Today;
+            string h = DateTime.Now.ToString("hh:mm:ss");
+            return h;
+        }
         public string ObtenerFechaSencilla()
         {
             //string fe = DateTime.Now.ToString("dd-MM-yyyy");

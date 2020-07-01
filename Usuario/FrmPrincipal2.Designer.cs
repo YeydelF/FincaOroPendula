@@ -59,6 +59,8 @@
             this.lblecha = new System.Windows.Forms.Label();
             this.PContenedor = new System.Windows.Forms.Panel();
             this.PLinea = new System.Windows.Forms.Panel();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestorDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -170,7 +172,8 @@
             this.actividadesToolStripMenuItem,
             this.lotesToolStripMenuItem,
             this.cicloToolStripMenuItem,
-            this.sesiónToolStripMenuItem});
+            this.sesiónToolStripMenuItem,
+            this.usuarioToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(11, 30);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
@@ -210,20 +213,20 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             // 
             // actividadesToolStripMenuItem
@@ -239,14 +242,14 @@
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // eliminarToolStripMenuItem1
             // 
             this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.eliminarToolStripMenuItem1.Text = "Eliminar";
             // 
             // lotesToolStripMenuItem
@@ -263,20 +266,20 @@
             // actualizarToolStripMenuItem1
             // 
             this.actualizarToolStripMenuItem1.Name = "actualizarToolStripMenuItem1";
-            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.actualizarToolStripMenuItem1.Text = "Actualizar";
             // 
             // agregarToolStripMenuItem2
             // 
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
-            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
             this.agregarToolStripMenuItem2.Text = "Agregar";
             this.agregarToolStripMenuItem2.Click += new System.EventHandler(this.agregarToolStripMenuItem2_Click);
             // 
             // eliminiarToolStripMenuItem
             // 
             this.eliminiarToolStripMenuItem.Name = "eliminiarToolStripMenuItem";
-            this.eliminiarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminiarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.eliminiarToolStripMenuItem.Text = "Eliminiar";
             // 
             // cicloToolStripMenuItem
@@ -360,6 +363,24 @@
             this.PLinea.TabIndex = 4;
             this.PLinea.Visible = false;
             // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestorDeUsuariosToolStripMenuItem});
+            this.usuarioToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.usuarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
+            this.usuarioToolStripMenuItem.Text = "Usuario";
+            // 
+            // gestorDeUsuariosToolStripMenuItem
+            // 
+            this.gestorDeUsuariosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.gestorDeUsuariosToolStripMenuItem.Name = "gestorDeUsuariosToolStripMenuItem";
+            this.gestorDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.gestorDeUsuariosToolStripMenuItem.Text = "Gestor de Usuarios";
+            this.gestorDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestorDeUsuariosToolStripMenuItem_Click);
+            // 
             // FrmPrincipal2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,5 +442,7 @@
         private System.Windows.Forms.Label lblecha;
         private System.Windows.Forms.Panel PContenedor;
         private System.Windows.Forms.Panel PLinea;
+        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestorDeUsuariosToolStripMenuItem;
     }
 }

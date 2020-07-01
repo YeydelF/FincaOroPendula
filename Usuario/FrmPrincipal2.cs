@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Datos;
+using Usuario.Forms;
+
 namespace Usuario
 {
     public partial class FrmPrincipal2 : Form
@@ -141,6 +143,12 @@ namespace Usuario
         private void PContenedor_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void gestorDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios u = new FrmUsuarios();
+            u.ShowDialog();
         }
     }
 }

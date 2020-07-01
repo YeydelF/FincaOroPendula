@@ -18,8 +18,8 @@ namespace Usuario
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             frmLogin Main = new frmLogin();
-            // FrmPrincipal2 Main = new FrmPrincipal2();
-            //frmGrafica Main = new frmGrafica();
+            //FrmPrincipal2 Main = new FrmPrincipal2();
+           // FrmUsuarios Main = new FrmUsuarios();
             Main.FormClosed += MainForm_Closed;
             Main.Show();
             Application.Run();
