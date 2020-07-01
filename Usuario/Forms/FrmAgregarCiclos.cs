@@ -61,5 +61,10 @@ namespace Usuario.Forms
         {
             MostrarCiclos();
         }
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
