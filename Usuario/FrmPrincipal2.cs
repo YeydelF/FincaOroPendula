@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Datos;
 using Usuario.Forms;
-
+using System.Drawing;
 namespace Usuario
 {
     public partial class FrmPrincipal2 : Form
@@ -20,6 +20,41 @@ namespace Usuario
         public FrmPrincipal2()
         {
             InitializeComponent();
+            this.MainMenuStrip = msMenu;
+            this.msMenu.Renderer = new MyRenderer();
+         
+        }
+        //------------------------------------------------------
+
+
+
+        //------------------------------------------------------
+        private class MyRenderer : ToolStripProfessionalRenderer
+        {
+            protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+            {
+
+                if (!e.Item.Selected)
+                {
+                   e.Item.ForeColor = Color.White;
+                    base.OnRenderMenuItemBackground(e);
+                }
+                else
+                {
+                    Pen oPen = new Pen(Color.FromArgb(75, 75, 75));
+                    SolidBrush oBrsh = new SolidBrush(Color.FromArgb(75, 75, 75));
+
+                    e.Item.ForeColor = Color.FromArgb(26, 157, 196);
+                    Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
+                    e.Graphics.FillRectangle(oBrsh, rc);
+                    e.Graphics.DrawRectangle(oPen, 0, 0, rc.Width, rc.Height);
+
+                    oPen.Dispose();
+                    oBrsh.Dispose();
+                  
+                    
+                }
+            }
         }
         private Form formActivo = null;
 
