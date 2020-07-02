@@ -57,7 +57,6 @@
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblecha = new System.Windows.Forms.Label();
-            this.holaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -168,8 +167,7 @@
             this.actividadesToolStripMenuItem,
             this.lotesToolStripMenuItem,
             this.cicloToolStripMenuItem,
-            this.sesiónToolStripMenuItem,
-            this.holaToolStripMenuItem});
+            this.sesiónToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(11, 30);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
@@ -341,12 +339,6 @@
             this.lblecha.Text = "label1";
             this.lblecha.Click += new System.EventHandler(this.lblecha_Click);
             // 
-            // holaToolStripMenuItem
-            // 
-            this.holaToolStripMenuItem.Name = "holaToolStripMenuItem";
-            this.holaToolStripMenuItem.Size = new System.Drawing.Size(51, 26);
-            this.holaToolStripMenuItem.Text = "hola ";
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -408,7 +400,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblecha;
-        private System.Windows.Forms.ToolStripMenuItem holaToolStripMenuItem;
     }
 }
 
