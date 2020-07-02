@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
+using Datos;
 
 namespace Usuario.Forms
 {
@@ -35,22 +36,25 @@ namespace Usuario.Forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            { 
-                string fecha = dtpFechaSiembra.Value.Year.ToString() +"-"+ dtpFechaSiembra.Value.Month.ToString() + "-" + dtpFechaSiembra.Value.Day.ToString();
-                DateTime fechaSiembra = Convert.ToDateTime(fecha); 
-                objetoDm.AgregarLotes(txtNombreLote.Text, txtDueno.Text, cbxVariedad.SelectedItem.ToString(), fechaSiembra, Convert.ToDouble(txtTamano.Text));
-                MessageBox.Show("Se guardo correctamente");
-                Limpiar();
-                MostrarLotes();
-            }
-            catch (FormatException)
+            if (validar())
             {
-                MessageBox.Show("El valor del tamaño es erróneo");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No se pudo guardar");
+                try
+                {
+                    string fecha = dtpFechaSiembra.Value.Year.ToString() + "-" + dtpFechaSiembra.Value.Month.ToString() + "-" + dtpFechaSiembra.Value.Day.ToString();
+                    DateTime fechaSiembra = Convert.ToDateTime(fecha);
+                    objetoDm.AgregarLotes(txtNombreLote.Text, txtDueno.Text, cbxVariedad.SelectedItem.ToString(), fechaSiembra, Convert.ToDouble(txtTamano.Text));
+                    MessageBox.Show("Se guardo correctamente");
+                    Limpiar();
+                    MostrarLotes();
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("El valor del tamaño es erróneo");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No se pudo guardar");
+                }
             }
         }
 
@@ -117,8 +121,34 @@ namespace Usuario.Forms
 
         private void FrmAgregarLotes_Load(object sender, EventArgs e)
         {
+            datConsultas add = new datConsultas();
+            datIPMaquina ip = new datIPMaquina();
+            string localIP = ip.ObtenerMac();
+            int result = Convert.ToInt32(add.ConsultaN("SELECT idUsuario from ip where ipFisico ='" + localIP + "' "));
+            string labor = add.ConsultaN("Select tipo_usuario from usuarios where idUsuario = '" + result + "' ");
+            if (labor.ToUpper() == "INVITADO")
+            {
+                Bloquear();
+            }
+
             MostrarLotes();
             cbxVariedad.SelectedIndex = 0;
         }
+        public void Bloquear()
+        {
+            btnGuardar.Enabled = false;
+        }
+        private Boolean validar()
+        {
+            if (txtNombreLote.Text.Trim() == "" || txtTamano.Text.Trim() == "" || txtDueno.Text.Trim() == "")
+            {
+                MessageBox.Show("Por favor rellenar los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }    
     }
 }

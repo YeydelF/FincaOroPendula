@@ -15,6 +15,8 @@ namespace Usuario.Forms
     public partial class FrmAgregarActividad : Form
     {
         datObtenerFecha pf = new datObtenerFecha();
+        datConsultas add = new datConsultas();
+        datIPMaquina ip = new datIPMaquina();
         public FrmAgregarActividad()
         {
             InitializeComponent();
@@ -37,10 +39,17 @@ namespace Usuario.Forms
         {
             try
             {
-                objetoDm.AgregarActividades(txtNombreActividad.Text, txtDescripcion.Text);
-                MessageBox.Show("Se guardo correctamente");
-                Limpiar();
-                MostrarActividades();
+                if (txtNombreActividad.Text.Trim() == "")
+                {
+                    MessageBox.Show("Por favor agregar nombre", "Campo Vacio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    objetoDm.AgregarActividades(txtNombreActividad.Text, txtDescripcion.Text);
+                    MessageBox.Show("Se guardo correctamente");
+                    Limpiar();
+                    MostrarActividades();
+                }
             }
             catch (Exception)
             {
@@ -55,8 +64,15 @@ namespace Usuario.Forms
 
         private void FrmAgregarActividad_Load(object sender, EventArgs e)
         {
-            
+            string localIP = ip.ObtenerMac();
+            int result = Convert.ToInt32(add.ConsultaN("SELECT idUsuario from ip where ipFisico ='" + localIP + "' "));
+            string labor = add.ConsultaN("Select tipo_usuario from usuarios where idUsuario = '" + result + "' ");
+            if(labor.ToUpper() == "INVITADO")
+            {
+                Bloquear();
+            }
             MostrarActividades();
+           
         }
 
         private void dgvMostrar_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -67,6 +83,10 @@ namespace Usuario.Forms
         private void PContenedor_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        public void Bloquear()
+        {
+            btnGuardar.Enabled = false;
         }
     }
 }

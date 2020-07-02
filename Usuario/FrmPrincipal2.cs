@@ -16,6 +16,7 @@ namespace Usuario
     {
         datOpcion op = new datOpcion();
         datObtenerFecha of = new datObtenerFecha();
+        datGetSet gs = new datGetSet();
         public FrmPrincipal2()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace Usuario
             PContenedor.Controls.Add(NuevoForm);
             PContenedor.Tag = NuevoForm;
             NuevoForm.BringToFront();
+          
             NuevoForm.Show();
 
 
@@ -61,8 +63,9 @@ namespace Usuario
             }
             else if (may.Equals("INVITADO"))//Aqui deberia bloquearse o dar persmisos al invitado
             {
-
-                //  MessageBox.Show("1");
+                gestorDeUsuariosToolStripMenuItem.Enabled = false;
+               // gs.TipoUsuario = "INVITADO";
+              
             }
 
         }
@@ -99,8 +102,9 @@ namespace Usuario
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            abrirForm(new Forms.FrmAgregarActividad());
-       
+           
+            abrirForm(new Forms.FrmAgregarActividad()); 
+          
         }
 
         private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)

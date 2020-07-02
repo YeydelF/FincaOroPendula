@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="datConsultas.cs" />
+    <Compile Include="datEliminarUser.cs" />
+    <Compile Include="datGetSet.cs" />
     <Compile Include="datIPMaquina.cs" />
     <Compile Include="datLogin.cs" />
     <Compile Include="datObtenerFecha.cs" />

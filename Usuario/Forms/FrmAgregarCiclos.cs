@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
+using Datos;
 
 namespace Usuario.Forms
 {
@@ -35,20 +36,24 @@ namespace Usuario.Forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            { 
-                string fechaI = dtpFechaInicial.Value.Year.ToString() +"-"+ dtpFechaInicial.Value.Month.ToString() + "-" + dtpFechaInicial.Value.Day.ToString();
-                string fechaF = dtpFechaFinal.Value.Year.ToString() + "-" + dtpFechaFinal.Value.Month.ToString() + "-" + dtpFechaFinal.Value.Day.ToString();
-                DateTime fechaInicial = Convert.ToDateTime(fechaI);
-                DateTime fechaFinal = Convert.ToDateTime(fechaF);
-                objetoDm.AgregarCiclos(txtNombreCiclo.Text, txtLugar.Text, txtDescripcion.Text, fechaInicial, fechaFinal);
-                MessageBox.Show("Se guardo correctamente");
-                Limpiar();
-                MostrarCiclos();
-            }
-            catch (Exception)
+            if (validar())
             {
-                MessageBox.Show("No se pudo guardar");
+                try
+                {
+
+                    string fechaI = dtpFechaInicial.Value.Year.ToString() + "-" + dtpFechaInicial.Value.Month.ToString() + "-" + dtpFechaInicial.Value.Day.ToString();
+                    string fechaF = dtpFechaFinal.Value.Year.ToString() + "-" + dtpFechaFinal.Value.Month.ToString() + "-" + dtpFechaFinal.Value.Day.ToString();
+                    DateTime fechaInicial = Convert.ToDateTime(fechaI);
+                    DateTime fechaFinal = Convert.ToDateTime(fechaF);
+                    objetoDm.AgregarCiclos(txtNombreCiclo.Text, txtLugar.Text, txtDescripcion.Text, fechaInicial, fechaFinal);
+                    MessageBox.Show("Se guardo correctamente");
+                    Limpiar();
+                    MostrarCiclos();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No se pudo guardar");
+                }
             }
         }
 
@@ -59,12 +64,40 @@ namespace Usuario.Forms
 
         private void FrmAgregarCiclos_Load(object sender, EventArgs e)
         {
+            datConsultas add = new datConsultas();
+            datIPMaquina ip = new datIPMaquina();
+            string localIP = ip.ObtenerMac();
+            int result = Convert.ToInt32(add.ConsultaN("SELECT idUsuario from ip where ipFisico ='" + localIP + "' "));
+            string labor = add.ConsultaN("Select tipo_usuario from usuarios where idUsuario = '" + result + "' ");
+            if (labor.ToUpper() == "INVITADO")
+            {
+                Bloquear();
+            }
+          
             MostrarCiclos();
+
         }
 
         private void btnCerrar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public void Bloquear()
+        {
+            btnGuardar.Enabled = false;
+        }
+      
+        private Boolean validar()
+        {
+            if (txtNombreCiclo.Text.Trim() == "" || txtLugar.Text.Trim() == "")
+            {
+                MessageBox.Show("Por favor rellenar los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
+using Datos;
 
 namespace Usuario.Forms
 {
@@ -22,6 +23,16 @@ namespace Usuario.Forms
 
         private void FrmAgregarInsumo_Load(object sender, EventArgs e)
         {
+            datConsultas add = new datConsultas();
+            datIPMaquina ip = new datIPMaquina();
+            string localIP = ip.ObtenerMac();
+            int result = Convert.ToInt32(add.ConsultaN("SELECT idUsuario from ip where ipFisico ='" + localIP + "' "));
+            string labor = add.ConsultaN("Select tipo_usuario from usuarios where idUsuario = '" + result + "' ");
+            if (labor.ToUpper() == "INVITADO")
+            {
+                Bloquear();
+            }
+
             MostrarInsumos();
             cbxUnidadMedida.SelectedIndex = 0;
         }
@@ -40,16 +51,20 @@ namespace Usuario.Forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (validar())
             {
-                objetoDm.AgregarInsumo(txtNombreInsumo.Text, cbxUnidadMedida.SelectedItem.ToString(), txtCostoUnitario.Text);
-                MessageBox.Show("Se guardo correctamente");
-                MostrarInsumos();
-                Limpiar();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No se pudo guardar");
+                try
+                {
+
+                    objetoDm.AgregarInsumo(txtNombreInsumo.Text, cbxUnidadMedida.SelectedItem.ToString(), txtCostoUnitario.Text);
+                    MessageBox.Show("Se guardo correctamente");
+                    MostrarInsumos();
+                    Limpiar();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No se pudo guardar");
+                }
             }
         }
 
@@ -61,6 +76,22 @@ namespace Usuario.Forms
         private void btnCerrar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public void Bloquear()
+        {
+            btnGuardar.Enabled = false;
+        }
+        private Boolean validar()
+        {
+            if (txtCostoUnitario.Text.Trim() == "" || txtNombreInsumo.Text.Trim() == "")
+            {
+                MessageBox.Show("Por favor rellenar los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
