@@ -19,9 +19,11 @@ namespace Dominio
             return tabla;
         }
 
-        public void AgregarLotes(string nombre, string dueno, string variedad, DateTime fechaSiembra, double tamano)
+        public string AgregarLotes(string nombre, string dueno, string variedad, DateTime fechaSiembra, double tamano)
         {
-            objetoDt.Agregar(nombre, dueno, variedad, fechaSiembra, tamano);
+
+           string retorno =  objetoDt.Agregar(nombre, dueno, variedad, fechaSiembra, tamano);
+            return retorno;
         }
 
     }

@@ -43,10 +43,18 @@ namespace Usuario.Forms
                 {
                     string fecha = dtpFechaSiembra.Value.Year.ToString() + "-" + dtpFechaSiembra.Value.Month.ToString() + "-" + dtpFechaSiembra.Value.Day.ToString();
                     DateTime fechaSiembra = Convert.ToDateTime(fecha);
-                    objetoDm.AgregarLotes(txtNombreLote.Text, txtDueno.Text, cbxVariedad.SelectedItem.ToString(), fechaSiembra, Convert.ToDouble(txtTamano.Text));
-                    MessageBox.Show("Se guardo correctamente");
-                    Limpiar();
-                    MostrarLotes();
+                    string res = objetoDm.AgregarLotes(txtNombreLote.Text, txtDueno.Text, cbxVariedad.SelectedItem.ToString(), fechaSiembra, Convert.ToDouble(txtTamano.Text));
+                    MessageBox.Show("" + res);
+                    if (res == "GUARDADO")
+                    {
+                        MessageBox.Show("Se guardo correctamente","Lote Guardado",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        Limpiar();
+                        MostrarLotes();
+                    }
+                    else if(res == "ERROR")
+                    {
+                        MessageBox.Show("Error al guardar, el lote ya existe","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
                 }
                 catch (FormatException)
                 {
@@ -171,13 +179,11 @@ namespace Usuario.Forms
             {
                 seleccionada = dgvMostrar.CurrentRow.Index;
                 Nombre = dgvMostrar.Rows[seleccionada].Cells[0].Value.ToString();
-                
-                 MessageBox.Show("e "+ Nombre);
                 DialogResult opcion = MessageBox.Show("¿Está seguro que desea eliminar este lote?", "Eliminar lote", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (opcion == DialogResult.OK)
                 {
                     string Retorno = pro.EliminarLote(Nombre);
-
+                  
                     if (Retorno == "ERROR")
                     {
                         MessageBox.Show("Error al eliminar lote", "Eliminar lote", MessageBoxButtons.OK, MessageBoxIcon.Error);

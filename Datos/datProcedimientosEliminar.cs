@@ -100,7 +100,7 @@ namespace Datos
                 con.conexion.Open();
                 com.Connection = con.conexion;
                 com.CommandType = CommandType.StoredProcedure;
-                com.CommandText = "EliminarActividad";
+                com.CommandText = "EliminarLote";
                 com.Parameters.AddWithValue("pNombre", Nombre);
                 res = com.Parameters.AddWithValue("Salida", "");
                 com.Parameters["Salida"].Direction = ParameterDirection.Output;
