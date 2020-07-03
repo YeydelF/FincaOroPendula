@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Datos;
 using Usuario.Forms;
-using System.Drawing;
+
 namespace Usuario
 {
     public partial class FrmPrincipal2 : Form

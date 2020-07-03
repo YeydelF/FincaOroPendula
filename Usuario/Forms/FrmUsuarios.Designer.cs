@@ -44,7 +44,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.Label = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuarios)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -155,7 +157,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgUsuarios.GridColor = System.Drawing.Color.DarkSeaGreen;
-            this.dtgUsuarios.Location = new System.Drawing.Point(355, 78);
+            this.dtgUsuarios.Location = new System.Drawing.Point(15, 61);
             this.dtgUsuarios.Name = "dtgUsuarios";
             this.dtgUsuarios.ReadOnly = true;
             this.dtgUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -171,7 +173,7 @@
             this.dtgUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgUsuarios.RowTemplate.ReadOnly = true;
             this.dtgUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgUsuarios.Size = new System.Drawing.Size(345, 319);
+            this.dtgUsuarios.Size = new System.Drawing.Size(352, 319);
             this.dtgUsuarios.TabIndex = 8;
             // 
             // label3
@@ -179,7 +181,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 12F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(351, 38);
+            this.label3.Location = new System.Drawing.Point(27, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 20);
             this.label3.TabIndex = 9;
@@ -230,18 +232,26 @@
             this.Label.TabIndex = 13;
             this.Label.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dtgUsuarios);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(327, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(384, 388);
+            this.panel1.TabIndex = 14;
+            // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(735, 409);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Label);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dtgUsuarios);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -255,6 +265,8 @@
             this.Text = "FrmUsuarios";
             this.Load += new System.EventHandler(this.FrmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuarios)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +287,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label Label;
+        private System.Windows.Forms.Panel panel1;
     }
 }

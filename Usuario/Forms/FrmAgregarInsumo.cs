@@ -212,13 +212,38 @@ namespace Usuario.Forms
             if (cant == "LT")
             {
              cbxUnidadMedida.SelectedIndex = 0;
-            } else if (cant == "gg")
+            } else
             {
                 cbxUnidadMedida.SelectedIndex = 1;
             }
             btnGuardar.Enabled = false;
             btnEliminar.Enabled = false;
 
+        }
+
+        private void FrmAgregarInsumo_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+         
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            Mensaje1.Visible = true;
+            mensaje2.Visible = true;
+        }
+
+        private void PContenedor_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Limpiar();
+            btnGuardar.Enabled = true;
+            btnEliminar.Enabled = true;
+            MostrarInsumos();
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            Mensaje1.Visible = false;
+            mensaje2.Visible = false;
         }
     }
 }

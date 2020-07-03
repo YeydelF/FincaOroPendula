@@ -28,7 +28,7 @@ namespace Usuario.Forms
         public void Usuario()
         {
 
-            if (txtNombre.Text.Trim() != "" || txtNombreUsuario.Text.Trim() != "" || txtPass.Text.Trim() != "")
+            if (txtNombre.Text.Trim() != "" && txtNombreUsuario.Text.Trim() != "" && txtPass.Text.Trim() != "")
             {
                 string NUadmin = "";
                 string NombreUsuario = txtNombreUsuario.Text;

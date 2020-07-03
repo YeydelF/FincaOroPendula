@@ -56,8 +56,8 @@ namespace Usuario
                 resultante = s.AbrirSesion("Entrar", usuario, cont, localIP, result,fecha);
                 if (resultante == "ERROR")//si el procedimiento envia error, es que algun dato esta malo
                 {
-                   
                     MessageBox.Show("El Usuario o Contraseña es Erroneo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPass.Clear();
                 }
                 else if (resultante == "INICIAR")//El procedimiento envia que todo esta bien y que se puede iniciar sesion
                 {
@@ -118,6 +118,10 @@ namespace Usuario
         {
             dtValidacionBox V = new dtValidacionBox();
             V.ValidarTexto(20, Label, e);
+            if(e.KeyChar == '\r')
+            {
+                this.button1.PerformClick();    
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -162,6 +166,15 @@ namespace Usuario
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtUser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                this.txtPass.Focus();
+            }
         }
         //------------------------------------------------------------
     }

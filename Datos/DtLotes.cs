@@ -47,7 +47,7 @@ namespace Datos
                 comando.Parameters.Clear();
 
                 return res.Value.ToString();
-            }catch(Exception ex)
+            }catch(Exception)
             {
                 return "ERROR";
             }

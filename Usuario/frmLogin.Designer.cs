@@ -78,9 +78,10 @@
             this.txtUser.Location = new System.Drawing.Point(68, 213);
             this.txtUser.Multiline = true;
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(267, 35);
+            this.txtUser.Size = new System.Drawing.Size(267, 30);
             this.txtUser.TabIndex = 3;
             this.txtUser.Click += new System.EventHandler(this.txtUser_Click);
+            this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUser_KeyDown);
             this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             // 
             // txtPass
@@ -155,6 +156,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
