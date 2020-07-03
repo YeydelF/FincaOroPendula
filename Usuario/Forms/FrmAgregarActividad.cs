@@ -106,7 +106,7 @@ namespace Usuario.Forms
                 // MessageBox.Show("e "+ valor);
                 DialogResult opcion = MessageBox.Show("¿Está seguro que desea eliminar esta actividad ?", "Eliminar Actividad", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                if (opcion == DialogResult.Yes)
+                if (opcion == DialogResult.OK)
                 {
                     string Retorno = pro.EliminarActividad(valor);
                     if (Retorno == "ERROR")
@@ -118,12 +118,12 @@ namespace Usuario.Forms
                         MessageBox.Show("Actividad eliminada", "Eliminar Actividad", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         MostrarActividades();
                     }
-
+                    else
+                    {
+                        MessageBox.Show("No se ha selecionado ningun usuario", "Seleccione un usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("No se ha selecionado ningun usuario", "Seleccione un usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+               
             }
         }
        

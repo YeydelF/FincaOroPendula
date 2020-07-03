@@ -89,42 +89,7 @@ namespace Datos
                 return "ERROR";
             }
         }
-        public string EliminarCiclo(string Nombre)
-        {
-            con.conexion.Close();
-            MySqlCommand com = new MySqlCommand();
-            MySqlParameter res;
-            try
-            {
-                con.conexion.Open();
-                com.Connection = con.conexion;
-                com.CommandType = CommandType.StoredProcedure;
-                com.CommandText = "EliminarActividad";
-                com.Parameters.AddWithValue("pNombreUDelete", Nombre);
-                res = com.Parameters.AddWithValue("Salida", "");
-                com.Parameters["Salida"].Direction = ParameterDirection.Output;
-                com.ExecuteNonQuery();
-
-                return res.Value.ToString();
-
-                //return "realizado";
-            }
-            catch (MySqlException ex)
-            {
-                //Console.WriteLine(ex);
-                MessageBox.Show("MySqlException " + ex.ToString());
-                con.conexion.Close();
-                return "ERROR";
-
-            }
-            catch (Exception ex1)
-            {
-                con.conexion.Close();
-                MessageBox.Show("Excepcion global" + ex1.ToString());
-
-                return "ERROR";
-            }
-        }
+       
         public string EliminarLote(string Nombre)
         {
             con.conexion.Close();
@@ -136,7 +101,7 @@ namespace Datos
                 com.Connection = con.conexion;
                 com.CommandType = CommandType.StoredProcedure;
                 com.CommandText = "EliminarActividad";
-                com.Parameters.AddWithValue("pNombreUDelete", Nombre);
+                com.Parameters.AddWithValue("pNombre", Nombre);
                 res = com.Parameters.AddWithValue("Salida", "");
                 com.Parameters["Salida"].Direction = ParameterDirection.Output;
                 com.ExecuteNonQuery();

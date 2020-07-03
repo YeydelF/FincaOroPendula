@@ -20,6 +20,7 @@ namespace Usuario.Forms
         }
 
         private DmLotes objetoDm = new DmLotes();
+        private datProcedimientosEliminar pro = new datProcedimientosEliminar();
         
         private void MostrarLotes()
         {
@@ -137,6 +138,7 @@ namespace Usuario.Forms
         public void Bloquear()
         {
             btnGuardar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
         private Boolean validar()
         {
@@ -149,6 +151,51 @@ namespace Usuario.Forms
             {
                 return true;
             }
-        }    
+        }
+
+        private void dgvMostrar_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+        private void Eliminar()
+        {
+            int seleccionada = 0;
+            string Nombre;
+         
+            if (dgvMostrar.SelectedRows.Count > 0)
+            {
+                seleccionada = dgvMostrar.CurrentRow.Index;
+                Nombre = dgvMostrar.Rows[seleccionada].Cells[0].Value.ToString();
+                
+                 MessageBox.Show("e "+ Nombre);
+                DialogResult opcion = MessageBox.Show("¿Está seguro que desea eliminar este lote?", "Eliminar lote", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (opcion == DialogResult.OK)
+                {
+                    string Retorno = pro.EliminarLote(Nombre);
+
+                    if (Retorno == "ERROR")
+                    {
+                        MessageBox.Show("Error al eliminar lote", "Eliminar lote", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (Retorno == "ELIMINADO")
+                    {
+                        MessageBox.Show("Lote eliminado", "Eliminar Lote", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MostrarLotes();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha selecionado ningun usuario", "Seleccione un usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+
+
+            }
+        }
     }
 }

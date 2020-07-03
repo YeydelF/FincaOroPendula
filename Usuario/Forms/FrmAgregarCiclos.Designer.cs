@@ -207,7 +207,7 @@
             this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(277, 393);
+            this.btnGuardar.Location = new System.Drawing.Point(287, 383);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(96, 38);
             this.btnGuardar.TabIndex = 3;

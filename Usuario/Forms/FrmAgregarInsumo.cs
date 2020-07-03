@@ -87,6 +87,8 @@ namespace Usuario.Forms
         public void Bloquear()
         {
             btnGuardar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnAcualizar.Enabled = false;
         }
         private Boolean validar()
         {
@@ -129,7 +131,7 @@ namespace Usuario.Forms
                     }
                     else if (Retorno == "ELIMINADO")
                     {
-                        MessageBox.Show("Insumo eliminada", "Eliminar Insumo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Insumo eliminado", "Eliminar Insumo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         MostrarInsumos();
                     }
                     else

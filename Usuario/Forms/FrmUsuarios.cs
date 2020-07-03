@@ -27,48 +27,50 @@ namespace Usuario.Forms
         //Metodo Agregar Usuario
         public void Usuario()
         {
-            string NUadmin = "";
-            string NombreUsuario = txtNombreUsuario.Text;
-            string Nombre = txtNombre.Text;
-            string Pass = txtPass.Text;
-            string tipo = cbxUsuario.SelectedItem.ToString();
-            string fecha = fe.ObtenerFechaSinHora();
-            string hora = fe.ObtenerHora();
-            string ipMaquina = ip.ObtenerMac();
-            string idUsuario = c.ConsultaN("select idUsuario from ip where ipFisico = '"+ipMaquina+"'");
-            if(idUsuario != null)
+
+            if (txtNombre.Text.Trim() != "" || txtNombreUsuario.Text.Trim() != "" || txtPass.Text.Trim() != "")
             {
-                int id = Convert.ToInt32( c.ConsultaN("select idUsuario from ip where ipFisico = '" + ipMaquina + "'"));
-                NUadmin = c.ConsultaN("select Nombre from usuarios where idUsuario = '"+ id +"'");
+                string NUadmin = "";
+                string NombreUsuario = txtNombreUsuario.Text;
+                string Nombre = txtNombre.Text;
+                string Pass = txtPass.Text;
+                string tipo = cbxUsuario.SelectedItem.ToString();
+                string fecha = fe.ObtenerFechaSinHora();
+                string hora = fe.ObtenerHora();
+                string ipMaquina = ip.ObtenerMac();
+                string idUsuario = c.ConsultaN("select idUsuario from ip where ipFisico = '" + ipMaquina + "'");
+                if (idUsuario != null)
+                {
+                    int id = Convert.ToInt32(c.ConsultaN("select idUsuario from ip where ipFisico = '" + ipMaquina + "'"));
+                    NUadmin = c.ConsultaN("select Nombre from usuarios where idUsuario = '" + id + "'");
+                }
+                int estado = 0;
+                string Accion = "AGREGAR";
+                string consulta = u.AgregarUsuario(Accion, Nombre, NUadmin, Pass, estado, tipo, ipMaquina, fecha, hora, NombreUsuario.ToLower());
+                if (consulta == "NOEXISTE")
+                {
+                    MessageBox.Show("El usuario ha sido guardado", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Mostrar();
+                    clean();
+                }
+                else if (consulta == "EXISTE")
+                {
+                    MessageBox.Show("El usuario ya existe", "Existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            int estado = 0;
-            string Accion = "AGREGAR";
-            string consulta = u.AgregarUsuario(Accion,Nombre,NUadmin,Pass,estado,tipo,ipMaquina,fecha,hora,NombreUsuario.ToLower());
-            if (consulta == "NOEXISTE")
+            else
             {
-                MessageBox.Show("El usuario ha sido guardado","Guardado",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                Mostrar();
-                clean();
-            }
-            else if (consulta == "EXISTE") 
-            {
-             MessageBox.Show("El usuario ya existe", "Existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Uno de los campos estan vacios", "Llenar campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Usuario();
-            TextoVacio();
+            
 
         }
-        private void TextoVacio()
-        {
-            if(txtNombre.Text.Trim() == "" || txtNombreUsuario.Text.Trim() == "" || txtPass.Text.Trim() == "")
-            {
-                MessageBox.Show("Uno de los campos estan vacios", "Llenar campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+       
         //Metodo para cargar datos en el dataGrid
         private void Mostrar()
         {
@@ -86,34 +88,38 @@ namespace Usuario.Forms
         {
             int seleccionada = 0;
             string valor,Ip,fecha,hora;
+           
             if (dtgUsuarios.SelectedRows.Count > 0)
             {
-                seleccionada = dtgUsuarios.CurrentRow.Index;
-                valor = dtgUsuarios.Rows[seleccionada].Cells[1].Value.ToString();
-                MessageBox.Show("¿Está seguro que desea eliminar este usuario ?", "Eliminar Usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                string  PassAdmin = Interaction.InputBox("Ingrese su contraseña de usuario ","Ingresar Contraseña");
-                Ip = ip.ObtenerMac();
-                fecha = fe.ObtenerFechaSinHora();
-                hora = fe.ObtenerHora();
-                int result = Convert.ToInt32(add.ConsultaN("SELECT idUsuario from ip where ipFisico ='" + Ip + "' "));
-                string nom = Convert.ToString(add.ConsultaN("SELECT nombreUsuario from usuarios where idUsuario ='" + result + "' "));
-               
-                 string Retorno = e.EliminarUsuario(valor,nom,PassAdmin,fecha,hora,Ip);
-                if(Retorno == "ERROR"){
-                    MessageBox.Show("Error al eliminar usuario", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if(Retorno == "ELIMINADO")
+                    seleccionada = dtgUsuarios.CurrentRow.Index;
+                    valor = dtgUsuarios.Rows[seleccionada].Cells[1].Value.ToString();
+                    DialogResult opcion =  MessageBox.Show("¿Está seguro que desea eliminar este usuario ?", "Eliminar Usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (opcion == DialogResult.OK)
                 {
-                    MessageBox.Show("Usuario Eliminado", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Mostrar();
-                }
+                    string PassAdmin = Interaction.InputBox("Ingrese su contraseña de usuario ", "Ingresar Contraseña");
+                    Ip = ip.ObtenerMac();
+                    fecha = fe.ObtenerFechaSinHora();
+                    hora = fe.ObtenerHora();
+                    int result = Convert.ToInt32(add.ConsultaN("SELECT idUsuario from ip where ipFisico ='" + Ip + "' "));
+                    string nom = Convert.ToString(add.ConsultaN("SELECT nombreUsuario from usuarios where idUsuario ='" + result + "' "));
 
-            }
+                    string Retorno = e.EliminarUsuario(valor, nom, PassAdmin, fecha, hora, Ip);
+                    if (Retorno == "ERROR")
+                    {
+                        MessageBox.Show("Error al eliminar usuario", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (Retorno == "ELIMINADO")
+                    {
+                        MessageBox.Show("Usuario Eliminado", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Mostrar();
+                    }
+                  }
+                }
             else
             {
-                MessageBox.Show("No se ha selecionado ningun usuario","Seleccione un usuario",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                 MessageBox.Show("No se ha selecionado ningun usuario", "Seleccione un usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            
            
         }
         private void FrmUsuarios_Load(object sender, EventArgs e)

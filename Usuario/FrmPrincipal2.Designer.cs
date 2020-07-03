@@ -44,12 +44,9 @@
             this.actividadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.actualizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cicloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -237,44 +234,25 @@
             // 
             this.lotesToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.lotesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.actualizarToolStripMenuItem1,
-            this.agregarToolStripMenuItem2,
-            this.eliminiarToolStripMenuItem});
+            this.agregarToolStripMenuItem2});
             this.lotesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.lotesToolStripMenuItem.Name = "lotesToolStripMenuItem";
             this.lotesToolStripMenuItem.Size = new System.Drawing.Size(56, 26);
             this.lotesToolStripMenuItem.Text = "Lotes";
-            // 
-            // actualizarToolStripMenuItem1
-            // 
-            this.actualizarToolStripMenuItem1.BackColor = System.Drawing.Color.Silver;
-            this.actualizarToolStripMenuItem1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.actualizarToolStripMenuItem1.Name = "actualizarToolStripMenuItem1";
-            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
-            this.actualizarToolStripMenuItem1.Text = "Actualizar";
             // 
             // agregarToolStripMenuItem2
             // 
             this.agregarToolStripMenuItem2.BackColor = System.Drawing.Color.Silver;
             this.agregarToolStripMenuItem2.ForeColor = System.Drawing.Color.RoyalBlue;
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
-            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
-            this.agregarToolStripMenuItem2.Text = "Agregar";
+            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(179, 22);
+            this.agregarToolStripMenuItem2.Text = "Gestionar Lotes";
             this.agregarToolStripMenuItem2.Click += new System.EventHandler(this.agregarToolStripMenuItem2_Click);
-            // 
-            // eliminiarToolStripMenuItem
-            // 
-            this.eliminiarToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
-            this.eliminiarToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.eliminiarToolStripMenuItem.Name = "eliminiarToolStripMenuItem";
-            this.eliminiarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.eliminiarToolStripMenuItem.Text = "Eliminiar";
             // 
             // cicloToolStripMenuItem
             // 
             this.cicloToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarToolStripMenuItem3,
-            this.editarToolStripMenuItem});
+            this.agregarToolStripMenuItem3});
             this.cicloToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cicloToolStripMenuItem.Name = "cicloToolStripMenuItem";
             this.cicloToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
@@ -285,17 +263,9 @@
             this.agregarToolStripMenuItem3.BackColor = System.Drawing.Color.Silver;
             this.agregarToolStripMenuItem3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.agregarToolStripMenuItem3.Name = "agregarToolStripMenuItem3";
-            this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(127, 22);
-            this.agregarToolStripMenuItem3.Text = "Agregar";
+            this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(188, 22);
+            this.agregarToolStripMenuItem3.Text = "Gestión de ciclos";
             this.agregarToolStripMenuItem3.Click += new System.EventHandler(this.agregarToolStripMenuItem3_Click);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
-            this.editarToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
             // 
             // sesiónToolStripMenuItem
             // 
@@ -423,12 +393,9 @@
         private System.Windows.Forms.ToolStripMenuItem actividadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem lotesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem eliminiarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cicloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;

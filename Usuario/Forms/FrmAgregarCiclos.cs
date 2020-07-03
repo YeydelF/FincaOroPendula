@@ -85,6 +85,7 @@ namespace Usuario.Forms
         public void Bloquear()
         {
             btnGuardar.Enabled = false;
+            
         }
       
         private Boolean validar()
