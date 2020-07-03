@@ -42,24 +42,24 @@ namespace Datos
             return tabla;
         }
 
-        public void Agregar(string nombre, string dueno, string variedad, DateTime fechaSiembra, double tamano)
-            {
-                comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "AgregarLote";
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@pNombreLote", nombre);
-                comando.Parameters.AddWithValue("@pDueno", dueno);
-                comando.Parameters.AddWithValue("@pVariedad", variedad);
-                comando.Parameters.AddWithValue("@pFechaSiembra", fechaSiembra);
-                comando.Parameters.AddWithValue("@pTamano", tamano);
+        public string Agregar(string nombre, string dueno, string variedad, DateTime fechaSiembra, double tamano)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "AgregarLote";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@pNombreLote", nombre);
+            comando.Parameters.AddWithValue("@pDueno", dueno);
+            comando.Parameters.AddWithValue("@pVariedad", variedad);
+            comando.Parameters.AddWithValue("@pFechaSiembra", fechaSiembra);
+            comando.Parameters.AddWithValue("@pTamano", tamano);
 
-                comando.ExecuteNonQuery();
-                comando.Parameters.Clear();
-
-                return res.Value.ToString();
-            }catch(Exception)
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            return res.Value.ToString();
+        }catch(Exception)
             {
                 return "ERROR";
+            }
             }
         }
 
