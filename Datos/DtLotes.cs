@@ -42,7 +42,7 @@ namespace Datos
             return tabla;
         }
 
-        public void Agregar(string nombre, string dueno, string variedad, DateTime fechaSiembra, double tamano)
+        public string Agregar(string nombre, string dueno, string variedad, DateTime fechaSiembra, double tamano)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "AgregarLote";
@@ -55,7 +55,7 @@ namespace Datos
 
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
-
+            return "GUARDADO";
         }
 
     }

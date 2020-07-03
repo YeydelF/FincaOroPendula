@@ -41,7 +41,7 @@ namespace Datos
             return tabla;
         }
 
-        public void Agregar(string nombre, string UnidadMedida,double CostoUnitario)
+        public string Agregar(string nombre, string UnidadMedida,double CostoUnitario)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "AgregarInsumo";
@@ -52,7 +52,7 @@ namespace Datos
             
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
-
+            return "GUARDADO";
         }
 
     }

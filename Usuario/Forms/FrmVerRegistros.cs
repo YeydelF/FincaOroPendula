@@ -38,13 +38,29 @@ namespace Usuario.Forms
         {
             string idLote = cbxLotes.SelectedValue.ToString();
             dgvActividades.DataSource =  lotes.Rlotes(idLote);
-            btnVerMas.Enabled = true;
+            if (dgvActividades.Rows.Count == 0)
+            {
+                MessageBox.Show("Este lote no tiene actividades");
+                btnVerMas.Enabled = false;
+            }
+            else
+            {
+                btnVerMas.Enabled = true;
+            }
+            
         }
         
         private void btnVerMas_Click(object sender, EventArgs e)
         {
-            mostrarDestalles();
-            btnVerMas.Enabled = false;
+            try
+            {
+                mostrarDestalles();
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Este lote no tiene actividades");
+            }
         }
 
         private void llenarCbx()

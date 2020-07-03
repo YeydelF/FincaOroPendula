@@ -33,33 +33,54 @@ namespace Usuario.Forms
 
         private void btnListo_Click(object sender, EventArgs e)
         {
-            int insumosUtilizados = Convert.ToInt32(txtInsumUtilizados.Text);
+            try
+            {
+                int insumosUtilizados = Convert.ToInt32(txtInsumUtilizados.Text);
 
-            if (insumosUtilizados == 0)
-            {
-                procedimientoRegistro();
-                btnFinalizar.Enabled = true;
-                btnListo.Enabled = false;
+                if (insumosUtilizados == 0)
+                {
+                    procedimientoRegistro();
+                    btnFinalizar.Enabled = true;
+                    btnListo.Enabled = false;
+                }
+                else
+                {
+                    gbInsumos.Visible = true;
+                    procedimientoRegistro();
+                    btnListo.Enabled = false;
+                }
             }
-            else
+            catch (Exception)
             {
-                gbInsumos.Visible = true;
-                procedimientoRegistro();
-                btnListo.Enabled = false;
+                MessageBox.Show("Debe rellenar todos los campos");
             }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            agregarInsumo();
+            try
+            {
+                agregarInsumo();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se puede repetir el mismo insumo, introduzca otro");
+            }
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            asignarInsumo();
-            objetoDm.sumarTotal();
-            MessageBox.Show("Registro agregado correctamente");
-            limpiar();
+            try
+            {
+                asignarInsumo();
+                objetoDm.sumarTotal();
+                MessageBox.Show("Registro agregado correctamente");
+                limpiar();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error");
+            }
         }
 
         private void llenarCbx()
@@ -111,33 +132,41 @@ namespace Usuario.Forms
         int contador = 0;
         private void agregarInsumo()
         {
+            //Validacion de insumo repetido 
             int insumosUtilizados = Convert.ToInt32(txtInsumUtilizados.Text);
 
-            int idInsumo = Convert.ToInt32(cbxInsumo.SelectedValue);
-            double cantidad = Convert.ToDouble(txtCantInsumo.Text);
-            double precioInsumo = objetoDm.obtenerPrecioInsumo(idInsumo.ToString());
-            double totalInsumo = cantidad * precioInsumo;
-            double Total = 0;
-
-            if ((cbxInsumo.SelectedItem != null) && (txtCantInsumo.Text != ""))
+            try
             {
-                
-                Total = Total + totalInsumo;
-                Aid.Add(idInsumo);
-                Acantidad.Add(cantidad);
-                AtotalInsumo.Add(totalInsumo);
+                int idInsumo = Convert.ToInt32(cbxInsumo.SelectedValue);
+                double cantidad = Convert.ToDouble(txtCantInsumo.Text);
+                double precioInsumo = objetoDm.obtenerPrecioInsumo(idInsumo.ToString());
+                double totalInsumo = cantidad * precioInsumo;
+                double Total = 0;
 
-
-                cbxInsumo.SelectedIndex = 0;
-                txtCantInsumo.Text = "";
-                contador++;
-                if (contador == insumosUtilizados)
+                if ((cbxInsumo.SelectedItem != null) && (txtCantInsumo.Text != ""))
                 {
-                    btnAgregar.Enabled = false;
-                    btnFinalizar.Enabled = true;
-                }
 
-                
+                    Total = Total + totalInsumo;
+                    Aid.Add(idInsumo);
+                    Acantidad.Add(cantidad);
+                    AtotalInsumo.Add(totalInsumo);
+
+
+                    cbxInsumo.SelectedIndex = 0;
+                    txtCantInsumo.Text = "";
+                    contador++;
+                    if (contador == insumosUtilizados)
+                    {
+                        btnAgregar.Enabled = false;
+                        btnFinalizar.Enabled = true;
+                    }
+
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Debe introducir la cantidad utilizada");
             }
         }
 
