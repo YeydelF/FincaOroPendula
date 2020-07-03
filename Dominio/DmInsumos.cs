@@ -26,5 +26,11 @@ namespace Dominio
             return result;
         }
 
+        public DataTable RInsumo(string idRegistro)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoDt.RInsumos(Convert.ToInt32(idRegistro));
+            return tabla;
+        }
     }
 }
