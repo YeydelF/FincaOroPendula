@@ -40,6 +40,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvMostrarIns = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAcualizar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cbxUnidadMedida = new System.Windows.Forms.ComboBox();
             this.txtCostoUnitario = new System.Windows.Forms.TextBox();
@@ -74,11 +76,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(622, 52);
+            this.label1.Location = new System.Drawing.Point(590, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 24);
+            this.label1.Size = new System.Drawing.Size(219, 24);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Agregar Insumo";
+            this.label1.Text = "Gestionar los Insumos";
             // 
             // btnCerrar
             // 
@@ -158,11 +160,15 @@
             this.dgvMostrarIns.RowHeadersWidth = 20;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
             this.dgvMostrarIns.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvMostrarIns.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMostrarIns.Size = new System.Drawing.Size(618, 366);
             this.dgvMostrarIns.TabIndex = 2;
+            this.dgvMostrarIns.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMostrarIns_RowHeaderMouseDoubleClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAcualizar);
+            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.cbxUnidadMedida);
             this.groupBox1.Controls.Add(this.txtCostoUnitario);
@@ -179,13 +185,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar";
             // 
+            // btnAcualizar
+            // 
+            this.btnAcualizar.FlatAppearance.BorderSize = 3;
+            this.btnAcualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.btnAcualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.btnAcualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcualizar.Location = new System.Drawing.Point(410, 309);
+            this.btnAcualizar.Name = "btnAcualizar";
+            this.btnAcualizar.Size = new System.Drawing.Size(96, 38);
+            this.btnAcualizar.TabIndex = 5;
+            this.btnAcualizar.Text = "Actualizar";
+            this.btnAcualizar.UseVisualStyleBackColor = true;
+            this.btnAcualizar.Click += new System.EventHandler(this.btnAcualizar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.FlatAppearance.BorderSize = 3;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Location = new System.Drawing.Point(277, 309);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(96, 38);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // btnGuardar
             // 
             this.btnGuardar.FlatAppearance.BorderSize = 3;
             this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(297, 308);
+            this.btnGuardar.Location = new System.Drawing.Point(141, 309);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(96, 38);
             this.btnGuardar.TabIndex = 3;
@@ -266,7 +300,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmAgregarInsumo";
-            this.Text = "FrmAgregarInsumo";
+            this.Text = "Gestión de Insumos";
             this.Load += new System.EventHandler(this.FrmAgregarInsumo_Load);
             this.PContenedor.ResumeLayout(false);
             this.PContenedor.PerformLayout();
@@ -295,5 +329,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAcualizar;
     }
 }

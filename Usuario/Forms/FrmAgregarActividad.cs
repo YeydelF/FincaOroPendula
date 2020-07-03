@@ -17,6 +17,7 @@ namespace Usuario.Forms
         datObtenerFecha pf = new datObtenerFecha();
         datConsultas add = new datConsultas();
         datIPMaquina ip = new datIPMaquina();
+        datProcedimientosEliminar pro = new datProcedimientosEliminar();
         public FrmAgregarActividad()
         {
             InitializeComponent();
@@ -87,6 +88,44 @@ namespace Usuario.Forms
         public void Bloquear()
         {
             btnGuardar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+        private void Eliminar()
+        {
+            int seleccionada = 0;
+            string valor;
+            if (dgvMostrar.SelectedRows.Count > 0)
+            {
+                seleccionada = dgvMostrar.CurrentRow.Index;
+                valor = dgvMostrar.Rows[seleccionada].Cells[0].Value.ToString();
+                // MessageBox.Show("e "+ valor);
+                DialogResult opcion = MessageBox.Show("¿Está seguro que desea eliminar esta actividad ?", "Eliminar Actividad", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (opcion == DialogResult.Yes)
+                {
+                    string Retorno = pro.EliminarActividad(valor);
+                    if (Retorno == "ERROR")
+                    {
+                        MessageBox.Show("Error al eliminar actividad", "Eliminar Actividad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (Retorno == "ELIMINADO")
+                    {
+                        MessageBox.Show("Actividad eliminada", "Eliminar Actividad", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MostrarActividades();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("No se ha selecionado ningun usuario", "Seleccione un usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+       
     }
 }

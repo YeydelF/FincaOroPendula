@@ -53,6 +53,7 @@
     <Compile Include="datLogin.cs" />
     <Compile Include="datObtenerFecha.cs" />
     <Compile Include="datOpcion.cs" />
+    <Compile Include="datProcedimientosEliminar.cs" />
     <Compile Include="datUsuario.cs" />
     <Compile Include="DtActividades.cs" />
     <Compile Include="DtCiclos.cs" />

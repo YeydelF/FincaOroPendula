@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Datos;
 using System.Data;
-
+using System.Windows.Forms;
 namespace Dominio
 {
     public class DmInsumos
@@ -19,9 +19,11 @@ namespace Dominio
             return tabla;
         }
 
-        public void AgregarInsumo(string nombre, string UnidadMedida, string CostoUnitario)
+        public string AgregarInsumo(string nombre, string UnidadMedida, string CostoUnitario)
         {
-            objetoDt.Agregar(nombre, UnidadMedida, Convert.ToDouble(CostoUnitario));
+            string result = objetoDt.Agregar(nombre, UnidadMedida, Convert.ToDouble(CostoUnitario));
+           // MessageBox.Show(result);
+            return result;
         }
 
     }

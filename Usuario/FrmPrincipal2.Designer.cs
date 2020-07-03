@@ -41,11 +41,8 @@
             this.manejoDePlantacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actividadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -203,9 +200,7 @@
             // insumosToolStripMenuItem
             // 
             this.insumosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarToolStripMenuItem,
-            this.actualizarToolStripMenuItem,
-            this.eliminarToolStripMenuItem});
+            this.agregarToolStripMenuItem});
             this.insumosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
             this.insumosToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
@@ -216,31 +211,14 @@
             this.agregarToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDark;
             this.agregarToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.agregarToolStripMenuItem.Text = "Agregar";
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.agregarToolStripMenuItem.Text = "Gestión de insumos";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
-            // 
-            // actualizarToolStripMenuItem
-            // 
-            this.actualizarToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
-            this.actualizarToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.actualizarToolStripMenuItem.Text = "Actualizar";
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
-            this.eliminarToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
             // 
             // actividadesToolStripMenuItem
             // 
             this.actividadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarToolStripMenuItem1,
-            this.eliminarToolStripMenuItem1});
+            this.agregarToolStripMenuItem1});
             this.actividadesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.actividadesToolStripMenuItem.Name = "actividadesToolStripMenuItem";
             this.actividadesToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
@@ -251,17 +229,9 @@
             this.agregarToolStripMenuItem1.BackColor = System.Drawing.Color.Silver;
             this.agregarToolStripMenuItem1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.agregarToolStripMenuItem1.Text = "Agregar";
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(223, 22);
+            this.agregarToolStripMenuItem1.Text = "Gestión de Actividades";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
-            // 
-            // eliminarToolStripMenuItem1
-            // 
-            this.eliminarToolStripMenuItem1.BackColor = System.Drawing.Color.Silver;
-            this.eliminarToolStripMenuItem1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.eliminarToolStripMenuItem1.Text = "Eliminar";
             // 
             // lotesToolStripMenuItem
             // 
@@ -280,7 +250,7 @@
             this.actualizarToolStripMenuItem1.BackColor = System.Drawing.Color.Silver;
             this.actualizarToolStripMenuItem1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.actualizarToolStripMenuItem1.Name = "actualizarToolStripMenuItem1";
-            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.actualizarToolStripMenuItem1.Text = "Actualizar";
             // 
             // agregarToolStripMenuItem2
@@ -288,7 +258,7 @@
             this.agregarToolStripMenuItem2.BackColor = System.Drawing.Color.Silver;
             this.agregarToolStripMenuItem2.ForeColor = System.Drawing.Color.RoyalBlue;
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
-            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
             this.agregarToolStripMenuItem2.Text = "Agregar";
             this.agregarToolStripMenuItem2.Click += new System.EventHandler(this.agregarToolStripMenuItem2_Click);
             // 
@@ -297,7 +267,7 @@
             this.eliminiarToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
             this.eliminiarToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
             this.eliminiarToolStripMenuItem.Name = "eliminiarToolStripMenuItem";
-            this.eliminiarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminiarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.eliminiarToolStripMenuItem.Text = "Eliminiar";
             // 
             // cicloToolStripMenuItem
@@ -315,7 +285,7 @@
             this.agregarToolStripMenuItem3.BackColor = System.Drawing.Color.Silver;
             this.agregarToolStripMenuItem3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.agregarToolStripMenuItem3.Name = "agregarToolStripMenuItem3";
-            this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(127, 22);
             this.agregarToolStripMenuItem3.Text = "Agregar";
             this.agregarToolStripMenuItem3.Click += new System.EventHandler(this.agregarToolStripMenuItem3_Click);
             // 
@@ -324,7 +294,7 @@
             this.editarToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
             this.editarToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
             // sesiónToolStripMenuItem
@@ -450,11 +420,8 @@
         private System.Windows.Forms.ToolStripMenuItem manejoDePlantacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actividadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem lotesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem2;

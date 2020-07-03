@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
-
+using System.Windows.Forms;
 namespace Datos
 {
     public class DtInsumos
@@ -27,18 +27,32 @@ namespace Datos
             return tabla;
         }
 
-        public void Agregar(string nombre, string UnidadMedida,double CostoUnitario)
+        public string Agregar(string nombre, string UnidadMedida,double CostoUnitario)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "AgregarInsumo";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@pNombre", nombre);
-            comando.Parameters.AddWithValue("@pUnidadMedida", UnidadMedida);
-            comando.Parameters.AddWithValue("@pCostoUnitario", CostoUnitario);
-            
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
+            conexion.conexion.Close();
+            try {
+                MySqlParameter res;
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "AgregarInsumo";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@pNombre", nombre);
+                comando.Parameters.AddWithValue("@pUnidadMedida", UnidadMedida);
+                comando.Parameters.AddWithValue("@pCostoUnitario", CostoUnitario);
+                res = comando.Parameters.AddWithValue("Salida", "");
+                comando.Parameters["Salida"].Direction = ParameterDirection.Output;
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+               // MessageBox.Show(res.Value.ToString());
+                return res.Value.ToString();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return "ERROR";
+            }
+
+           
         }
 
     }
