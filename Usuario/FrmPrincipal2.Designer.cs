@@ -59,6 +59,7 @@
             this.lblecha = new System.Windows.Forms.Label();
             this.PContenedor = new System.Windows.Forms.Panel();
             this.PLinea = new System.Windows.Forms.Panel();
+            this.verRegistrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -182,7 +183,8 @@
             // 
             this.controlDeGastosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.controlDeGastosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manejoDePlantacionesToolStripMenuItem});
+            this.manejoDePlantacionesToolStripMenuItem,
+            this.verRegistrosToolStripMenuItem});
             this.controlDeGastosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.controlDeGastosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.controlDeGastosToolStripMenuItem.Name = "controlDeGastosToolStripMenuItem";
@@ -195,6 +197,7 @@
             this.manejoDePlantacionesToolStripMenuItem.Name = "manejoDePlantacionesToolStripMenuItem";
             this.manejoDePlantacionesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.manejoDePlantacionesToolStripMenuItem.Text = "Manejo de plantaciones";
+            this.manejoDePlantacionesToolStripMenuItem.Click += new System.EventHandler(this.manejoDePlantacionesToolStripMenuItem_Click);
             // 
             // insumosToolStripMenuItem
             // 
@@ -210,20 +213,20 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             // 
             // actividadesToolStripMenuItem
@@ -239,14 +242,14 @@
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // eliminarToolStripMenuItem1
             // 
             this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.eliminarToolStripMenuItem1.Text = "Eliminar";
             // 
             // lotesToolStripMenuItem
@@ -263,20 +266,20 @@
             // actualizarToolStripMenuItem1
             // 
             this.actualizarToolStripMenuItem1.Name = "actualizarToolStripMenuItem1";
-            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.actualizarToolStripMenuItem1.Text = "Actualizar";
             // 
             // agregarToolStripMenuItem2
             // 
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
-            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
             this.agregarToolStripMenuItem2.Text = "Agregar";
             this.agregarToolStripMenuItem2.Click += new System.EventHandler(this.agregarToolStripMenuItem2_Click);
             // 
             // eliminiarToolStripMenuItem
             // 
             this.eliminiarToolStripMenuItem.Name = "eliminiarToolStripMenuItem";
-            this.eliminiarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminiarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.eliminiarToolStripMenuItem.Text = "Eliminiar";
             // 
             // cicloToolStripMenuItem
@@ -292,14 +295,14 @@
             // agregarToolStripMenuItem3
             // 
             this.agregarToolStripMenuItem3.Name = "agregarToolStripMenuItem3";
-            this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(127, 22);
             this.agregarToolStripMenuItem3.Text = "Agregar";
             this.agregarToolStripMenuItem3.Click += new System.EventHandler(this.agregarToolStripMenuItem3_Click);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
             // sesiónToolStripMenuItem
@@ -332,11 +335,11 @@
             // lblecha
             // 
             this.lblecha.AutoSize = true;
-            this.lblecha.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblecha.ForeColor = System.Drawing.Color.White;
             this.lblecha.Location = new System.Drawing.Point(1144, 5);
             this.lblecha.Name = "lblecha";
-            this.lblecha.Size = new System.Drawing.Size(52, 20);
+            this.lblecha.Size = new System.Drawing.Size(51, 20);
             this.lblecha.TabIndex = 0;
             this.lblecha.Text = "label1";
             // 
@@ -359,6 +362,13 @@
             this.PLinea.Size = new System.Drawing.Size(1367, 10);
             this.PLinea.TabIndex = 4;
             this.PLinea.Visible = false;
+            // 
+            // verRegistrosToolStripMenuItem
+            // 
+            this.verRegistrosToolStripMenuItem.Name = "verRegistrosToolStripMenuItem";
+            this.verRegistrosToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.verRegistrosToolStripMenuItem.Text = "Ver registros";
+            this.verRegistrosToolStripMenuItem.Click += new System.EventHandler(this.verRegistrosToolStripMenuItem_Click);
             // 
             // FrmPrincipal2
             // 
@@ -421,5 +431,6 @@
         private System.Windows.Forms.Label lblecha;
         private System.Windows.Forms.Panel PContenedor;
         private System.Windows.Forms.Panel PLinea;
+        private System.Windows.Forms.ToolStripMenuItem verRegistrosToolStripMenuItem;
     }
 }

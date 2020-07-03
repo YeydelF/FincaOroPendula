@@ -57,6 +57,7 @@
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblecha = new System.Windows.Forms.Label();
+            this.verRegistrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -179,7 +180,8 @@
             // 
             this.controlDeGastosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.controlDeGastosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manejoDePlantacionesToolStripMenuItem});
+            this.manejoDePlantacionesToolStripMenuItem,
+            this.verRegistrosToolStripMenuItem});
             this.controlDeGastosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.controlDeGastosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.controlDeGastosToolStripMenuItem.Name = "controlDeGastosToolStripMenuItem";
@@ -339,6 +341,13 @@
             this.lblecha.Text = "label1";
             this.lblecha.Click += new System.EventHandler(this.lblecha_Click);
             // 
+            // verRegistrosToolStripMenuItem
+            // 
+            this.verRegistrosToolStripMenuItem.Name = "verRegistrosToolStripMenuItem";
+            this.verRegistrosToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.verRegistrosToolStripMenuItem.Text = "Ver registros";
+            this.verRegistrosToolStripMenuItem.Click += new System.EventHandler(this.verRegistrosToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -400,6 +409,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblecha;
+        private System.Windows.Forms.ToolStripMenuItem verRegistrosToolStripMenuItem;
     }
 }
 

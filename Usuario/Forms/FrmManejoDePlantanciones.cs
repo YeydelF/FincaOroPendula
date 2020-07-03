@@ -39,11 +39,13 @@ namespace Usuario.Forms
             {
                 procedimientoRegistro();
                 btnFinalizar.Enabled = true;
+                btnListo.Enabled = false;
             }
             else
             {
                 gbInsumos.Visible = true;
                 procedimientoRegistro();
+                btnListo.Enabled = false;
             }
         }
 
@@ -56,6 +58,8 @@ namespace Usuario.Forms
         {
             asignarInsumo();
             objetoDm.sumarTotal();
+            MessageBox.Show("Registro agregado correctamente");
+            limpiar();
         }
 
         private void llenarCbx()
@@ -79,22 +83,26 @@ namespace Usuario.Forms
 
         private void procedimientoRegistro()
         {
-            //if ((cbxCiclo.SelectedItem != null) && (cbxLote.SelectedItem != null) && (cbxActividad.SelectedItem != null) && (cbxInsumo.SelectedItem != null)
-            //    && (txtDH.Text != "") && (txtCUDH.Text != "") && (txtCantInsumo.Text != "") && (txtInsumUtilizados.Text != ""))
-            //{
-            string idLote = cbxLote.SelectedValue.ToString();
-            string idActividad = cbxActividad.SelectedValue.ToString();
-            string idCiclo = cbxCiclo.SelectedValue.ToString();
-            string f = dtpFecha.Value.Year.ToString() + "-" + dtpFecha.Value.Month.ToString() + "-" + dtpFecha.Value.Day.ToString();
-            DateTime fecha = Convert.ToDateTime(f);
-            double diasHombre = Convert.ToDouble(txtDH.Text);
-            double costoUnitarioDH = Convert.ToDouble(txtCUDH.Text);
-            double costoTotalDH = diasHombre * costoUnitarioDH;
-            string cantInsumoUtilizada = txtInsumUtilizados.Text;
+            if ((txtDH.Text == "") && (txtCUDH.Text == "") && (txtCantInsumo.Text == "") && (txtInsumUtilizados.Text == ""))
+            {
+                MessageBox.Show("Debe llenar todos los campos");
+            }
+            else
+            {
+                string idLote = cbxLote.SelectedValue.ToString();
+                string idActividad = cbxActividad.SelectedValue.ToString();
+                string idCiclo = cbxCiclo.SelectedValue.ToString();
+                string f = dtpFecha.Value.Year.ToString() + "-" + dtpFecha.Value.Month.ToString() + "-" + dtpFecha.Value.Day.ToString();
+                DateTime fecha = Convert.ToDateTime(f);
+                double diasHombre = Convert.ToDouble(txtDH.Text);
+                double costoUnitarioDH = Convert.ToDouble(txtCUDH.Text);
+                double costoTotalDH = diasHombre * costoUnitarioDH;
+                string cantInsumoUtilizada = txtInsumUtilizados.Text;
 
 
-            objetoDm.AgregarRegistro(idLote, idActividad, idCiclo, fecha, diasHombre, costoUnitarioDH, costoTotalDH);
-            //}
+                objetoDm.AgregarRegistro(idLote, idActividad, idCiclo, fecha, diasHombre, costoUnitarioDH, costoTotalDH);
+                
+            }
         }
 
         public ArrayList Aid = new ArrayList();
@@ -142,6 +150,19 @@ namespace Usuario.Forms
                 objetoDm.AgregarInsumoRegistro(Aid[i].ToString(), Acantidad[i].ToString(), AtotalInsumo[i].ToString());
             }
 
+        }
+
+        private void limpiar()
+        {
+            txtDH.Clear();
+            txtCUDH.Clear();
+            txtInsumUtilizados.Clear();
+            txtCantInsumo.Clear();
+            cbxCiclo.SelectedIndex = 0;
+            cbxLote.SelectedIndex = 0;
+            cbxActividad.SelectedIndex = 0;
+            cbxInsumo.SelectedIndex = 0;
+            btnListo.Enabled = true;
         }
 
         private void txtDH_KeyPress(object sender, KeyPressEventArgs e)

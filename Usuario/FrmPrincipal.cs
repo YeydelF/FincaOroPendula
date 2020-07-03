@@ -165,5 +165,10 @@ namespace Usuario
         {
             abrirForm(new Forms.FrmManejoDePlantanciones());
         }
+
+        private void verRegistrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirForm(new Forms.FrmVerRegistros());
+        }
     }
 }

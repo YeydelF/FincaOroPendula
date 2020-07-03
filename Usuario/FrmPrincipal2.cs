@@ -47,7 +47,7 @@ namespace Usuario
             int result = Convert.ToInt32(add.ConsultaN("SELECT idUsuario from ip where ipFisico ='" + localIP + "' "));
             string nom = Convert.ToString(add.ConsultaN("SELECT Nombre from usuarios where idUsuario ='" + result + "' "));
             string labor = add.ConsultaN("Select tipo_usuario from usuarios where idUsuario = '" + result + "' ");
-            string lab = ("Finca Oro Pendula  '" + nom.ToUpper() + "'   '" + labor + "'");
+            string lab = ("Finca Orpendula  '" + nom.ToUpper() + "'   '" + labor + "'");
             labelBar.Text = lab;
             string may = labor.ToUpper();
             //MessageBox.Show(may);
@@ -141,6 +141,16 @@ namespace Usuario
         private void PContenedor_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void manejoDePlantacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirForm(new Forms.FrmManejoDePlantanciones());
+        }
+
+        private void verRegistrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirForm(new Forms.FrmVerRegistros());
         }
     }
 }

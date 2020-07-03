@@ -27,6 +27,20 @@ namespace Datos
             return tabla;
         }
 
+        public DataTable RInsumos(int idRegistro)
+        {
+            tabla.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RInsumos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@pIdRegistro", idRegistro);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
         public void Agregar(string nombre, string UnidadMedida,double CostoUnitario)
         {
             comando.Connection = conexion.AbrirConexion();

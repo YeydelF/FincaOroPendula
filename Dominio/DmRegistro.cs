@@ -34,5 +34,13 @@ namespace Dominio
         {
             objetoDt.sumarTotal();
         }
+
+        public DataTable RRegistro(string idRegistro)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoDt.RRegistro(Convert.ToInt32(idRegistro));
+            return tabla;
+        }
+
     }
 }

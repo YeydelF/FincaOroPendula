@@ -28,6 +28,20 @@ namespace Datos
             return tabla;
         }
 
+        public DataTable Rlotes(int idLote)
+        {
+            tabla.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RLotes";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@pIdLote", idLote);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
         public void Agregar(string nombre, string dueno, string variedad, DateTime fechaSiembra, double tamano)
         {
             comando.Connection = conexion.AbrirConexion();

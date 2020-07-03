@@ -118,7 +118,7 @@
             this.btnFinalizar.Enabled = false;
             this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizar.Location = new System.Drawing.Point(699, 633);
+            this.btnFinalizar.Location = new System.Drawing.Point(1147, 458);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(96, 31);
             this.btnFinalizar.TabIndex = 5;
@@ -133,7 +133,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cbxActividad);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(356, 194);
+            this.groupBox2.Location = new System.Drawing.Point(353, 151);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(788, 424);
             this.groupBox2.TabIndex = 2;
@@ -171,6 +171,7 @@
             // txtCantInsumo
             // 
             this.txtCantInsumo.Location = new System.Drawing.Point(385, 33);
+            this.txtCantInsumo.MaxLength = 20;
             this.txtCantInsumo.Name = "txtCantInsumo";
             this.txtCantInsumo.Size = new System.Drawing.Size(151, 27);
             this.txtCantInsumo.TabIndex = 3;
@@ -238,6 +239,7 @@
             // txtInsumUtilizados
             // 
             this.txtInsumUtilizados.Location = new System.Drawing.Point(267, 31);
+            this.txtInsumUtilizados.MaxLength = 20;
             this.txtInsumUtilizados.Name = "txtInsumUtilizados";
             this.txtInsumUtilizados.Size = new System.Drawing.Size(71, 27);
             this.txtInsumUtilizados.TabIndex = 3;
@@ -269,6 +271,7 @@
             // txtCUDH
             // 
             this.txtCUDH.Location = new System.Drawing.Point(150, 72);
+            this.txtCUDH.MaxLength = 20;
             this.txtCUDH.Name = "txtCUDH";
             this.txtCUDH.Size = new System.Drawing.Size(188, 27);
             this.txtCUDH.TabIndex = 3;
@@ -286,6 +289,7 @@
             // txtDH
             // 
             this.txtDH.Location = new System.Drawing.Point(150, 20);
+            this.txtDH.MaxLength = 20;
             this.txtDH.Name = "txtDH";
             this.txtDH.Size = new System.Drawing.Size(188, 27);
             this.txtDH.TabIndex = 3;
@@ -317,9 +321,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(391, 21);
+            this.groupBox1.Location = new System.Drawing.Point(392, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(712, 156);
+            this.groupBox1.Size = new System.Drawing.Size(712, 137);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos generales";

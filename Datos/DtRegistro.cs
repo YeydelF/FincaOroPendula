@@ -69,5 +69,19 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
+
+        public DataTable RRegistro(int idRegistro)
+        {
+            tabla.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RRegistro";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@pIdRegistro", idRegistro);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return tabla;
+        }
     }
 }
