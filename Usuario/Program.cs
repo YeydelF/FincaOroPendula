@@ -19,7 +19,8 @@ namespace Usuario
             Application.SetCompatibleTextRenderingDefault(false);
             frmLogin Main = new frmLogin();
             //FrmPrincipal2 Main = new FrmPrincipal2();
-           // FrmUsuarios Main = new FrmUsuarios();
+            //frmGrafica Main = new frmGrafica();
+            //FrmPrincipal Main = new FrmPrincipal();
             Main.FormClosed += MainForm_Closed;
             Main.Show();
             Application.Run();
