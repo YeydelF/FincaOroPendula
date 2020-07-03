@@ -56,6 +56,7 @@ namespace Usuario
                 resultante = s.AbrirSesion("Entrar", usuario, cont, localIP, result,fecha);
                 if (resultante == "ERROR")//si el procedimiento envia error, es que algun dato esta malo
                 {
+                   
                     MessageBox.Show("El Usuario o Contraseña es Erroneo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (resultante == "INICIAR")//El procedimiento envia que todo esta bien y que se puede iniciar sesion

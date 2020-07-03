@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Datos
 {
-    class Conexion
+   public class Conexion
     {
     public MySqlConnection conexion = new MySqlConnection("server=localhost; database=bdoropend; Uid=root; pwd=a1234;");
 
