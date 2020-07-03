@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="DmActividades.cs" />
     <Compile Include="DmCiclos.cs" />
+    <Compile Include="DmGeneral.cs" />
     <Compile Include="DmInsumos.cs" />
     <Compile Include="DmLotes.cs" />
+    <Compile Include="DmRegistro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

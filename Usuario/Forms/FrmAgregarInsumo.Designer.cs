@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarInsumo));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarInsumo));
             this.PContenedor = new System.Windows.Forms.Panel();
+            this.mensaje2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Mensaje1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,15 +53,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Mensaje1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.mensaje2 = new System.Windows.Forms.Label();
             this.PContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarIns)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PContenedor
@@ -75,9 +75,45 @@
             this.PContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PContenedor.Location = new System.Drawing.Point(0, 0);
             this.PContenedor.Name = "PContenedor";
-            this.PContenedor.Size = new System.Drawing.Size(1360, 681);
+            this.PContenedor.Size = new System.Drawing.Size(1360, 625);
             this.PContenedor.TabIndex = 2;
             this.PContenedor.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PContenedor_MouseDoubleClick);
+            // 
+            // mensaje2
+            // 
+            this.mensaje2.AutoSize = true;
+            this.mensaje2.Font = new System.Drawing.Font("Arial", 10F);
+            this.mensaje2.ForeColor = System.Drawing.Color.White;
+            this.mensaje2.Location = new System.Drawing.Point(84, 580);
+            this.mensaje2.Name = "mensaje2";
+            this.mensaje2.Size = new System.Drawing.Size(449, 16);
+            this.mensaje2.TabIndex = 13;
+            this.mensaje2.Text = "Para Cancelar la actualización presione doble click en cualquier lugar.";
+            this.mensaje2.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(29, 558);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            // 
+            // Mensaje1
+            // 
+            this.Mensaje1.AutoSize = true;
+            this.Mensaje1.Font = new System.Drawing.Font("Arial", 10F);
+            this.Mensaje1.ForeColor = System.Drawing.Color.White;
+            this.Mensaje1.Location = new System.Drawing.Point(84, 558);
+            this.Mensaje1.Name = "Mensaje1";
+            this.Mensaje1.Size = new System.Drawing.Size(436, 16);
+            this.Mensaje1.TabIndex = 11;
+            this.Mensaje1.Text = "Para actualizar un insumo, presione doble click en el inicio de la fila.";
+            this.Mensaje1.Visible = false;
             // 
             // label1
             // 
@@ -298,48 +334,12 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Lista";
             // 
-            // Mensaje1
-            // 
-            this.Mensaje1.AutoSize = true;
-            this.Mensaje1.Font = new System.Drawing.Font("Arial", 10F);
-            this.Mensaje1.ForeColor = System.Drawing.Color.White;
-            this.Mensaje1.Location = new System.Drawing.Point(84, 558);
-            this.Mensaje1.Name = "Mensaje1";
-            this.Mensaje1.Size = new System.Drawing.Size(436, 16);
-            this.Mensaje1.TabIndex = 11;
-            this.Mensaje1.Text = "Para actualizar un insumo, presione doble click en el inicio de la fila.";
-            this.Mensaje1.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 558);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
-            // 
-            // mensaje2
-            // 
-            this.mensaje2.AutoSize = true;
-            this.mensaje2.Font = new System.Drawing.Font("Arial", 10F);
-            this.mensaje2.ForeColor = System.Drawing.Color.White;
-            this.mensaje2.Location = new System.Drawing.Point(84, 580);
-            this.mensaje2.Name = "mensaje2";
-            this.mensaje2.Size = new System.Drawing.Size(449, 16);
-            this.mensaje2.TabIndex = 13;
-            this.mensaje2.Text = "Para Cancelar la actualización presione doble click en cualquier lugar.";
-            this.mensaje2.Visible = false;
-            // 
             // FrmAgregarInsumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(1360, 681);
+            this.ClientSize = new System.Drawing.Size(1360, 625);
             this.Controls.Add(this.PContenedor);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -349,12 +349,12 @@
             this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FrmAgregarInsumo_MouseDoubleClick);
             this.PContenedor.ResumeLayout(false);
             this.PContenedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarIns)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -28,11 +28,22 @@ namespace Datos
             return tabla;
         }
 
-        public string Agregar(string nombre, string dueno, string variedad, DateTime fechaSiembra, double tamano)
+        public DataTable Rlotes(int idLote)
         {
-            try
+            tabla.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RLotes";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@pIdLote", idLote);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
+        public void Agregar(string nombre, string dueno, string variedad, DateTime fechaSiembra, double tamano)
             {
-                MySqlParameter res;
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "AgregarLote";
                 comando.CommandType = CommandType.StoredProcedure;
@@ -41,8 +52,7 @@ namespace Datos
                 comando.Parameters.AddWithValue("@pVariedad", variedad);
                 comando.Parameters.AddWithValue("@pFechaSiembra", fechaSiembra);
                 comando.Parameters.AddWithValue("@pTamano", tamano);
-                res = comando.Parameters.AddWithValue("Salida", "");
-                comando.Parameters["Salida"].Direction = ParameterDirection.Output;
+
                 comando.ExecuteNonQuery();
                 comando.Parameters.Clear();
 

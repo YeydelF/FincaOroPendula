@@ -57,8 +57,10 @@
     <Compile Include="datUsuario.cs" />
     <Compile Include="DtActividades.cs" />
     <Compile Include="DtCiclos.cs" />
+    <Compile Include="DtGeneral.cs" />
     <Compile Include="DtInsumos.cs" />
     <Compile Include="DtLotes.cs" />
+    <Compile Include="DtRegistro.cs" />
     <Compile Include="dtValidacionBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

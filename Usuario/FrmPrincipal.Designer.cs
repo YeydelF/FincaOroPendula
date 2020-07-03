@@ -1,16 +1,16 @@
 ﻿namespace Usuario
 {
-    partial class FrmPrincipal2
+    partial class FrmPrincipal
     {
         /// <summary>
-        /// Required designer variable.
+        /// Variable del diseñador necesaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Limpiar los recursos que se estén usando.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,15 +20,15 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.PTop = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelBar = new System.Windows.Forms.Label();
@@ -38,6 +38,7 @@
             this.btnMin = new System.Windows.Forms.PictureBox();
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.controlDeGastosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manejoDePlantacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,10 +57,7 @@
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblecha = new System.Windows.Forms.Label();
-            this.PContenedor = new System.Windows.Forms.Panel();
-            this.PLinea = new System.Windows.Forms.Panel();
             this.verRegistrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manejoDePlantacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -81,11 +79,11 @@
             this.PTop.Controls.Add(this.btnReducir);
             this.PTop.Controls.Add(this.btnMin);
             this.PTop.Controls.Add(this.msMenu);
-            this.PTop.Location = new System.Drawing.Point(-4, 0);
+            this.PTop.Location = new System.Drawing.Point(0, 0);
             this.PTop.Margin = new System.Windows.Forms.Padding(4);
             this.PTop.Name = "PTop";
-            this.PTop.Size = new System.Drawing.Size(1354, 62);
-            this.PTop.TabIndex = 1;
+            this.PTop.Size = new System.Drawing.Size(1199, 62);
+            this.PTop.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -107,12 +105,13 @@
             this.labelBar.Size = new System.Drawing.Size(152, 16);
             this.labelBar.TabIndex = 2;
             this.labelBar.Text = "Información de Programa";
+            this.labelBar.Click += new System.EventHandler(this.labelBar_Click);
             // 
             // btnCerrar
             // 
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1322, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(1159, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(29, 24);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -123,9 +122,8 @@
             // btnMax
             // 
             this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMax.Enabled = false;
             this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
-            this.btnMax.Location = new System.Drawing.Point(1287, 0);
+            this.btnMax.Location = new System.Drawing.Point(1124, 0);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(29, 24);
             this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -136,9 +134,8 @@
             // btnReducir
             // 
             this.btnReducir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReducir.Enabled = false;
             this.btnReducir.Image = ((System.Drawing.Image)(resources.GetObject("btnReducir.Image")));
-            this.btnReducir.Location = new System.Drawing.Point(1287, 0);
+            this.btnReducir.Location = new System.Drawing.Point(1124, 0);
             this.btnReducir.Name = "btnReducir";
             this.btnReducir.Size = new System.Drawing.Size(29, 24);
             this.btnReducir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -151,7 +148,7 @@
             this.btnMin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
-            this.btnMin.Location = new System.Drawing.Point(1252, 0);
+            this.btnMin.Location = new System.Drawing.Point(1089, 0);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(29, 24);
             this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -166,7 +163,6 @@
             this.msMenu.Dock = System.Windows.Forms.DockStyle.None;
             this.msMenu.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manejoDePlantacionesToolStripMenuItem,
             this.controlDeGastosToolStripMenuItem,
             this.insumosToolStripMenuItem,
             this.actividadesToolStripMenuItem,
@@ -176,14 +172,29 @@
             this.msMenu.Location = new System.Drawing.Point(11, 30);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.msMenu.Size = new System.Drawing.Size(1343, 32);
+            this.msMenu.Size = new System.Drawing.Size(1188, 32);
             this.msMenu.TabIndex = 0;
             this.msMenu.Text = "menuStrip1";
             // 
             // controlDeGastosToolStripMenuItem
             // 
+            this.controlDeGastosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.controlDeGastosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manejoDePlantacionesToolStripMenuItem,
+            this.verRegistrosToolStripMenuItem});
+            this.controlDeGastosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.controlDeGastosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.controlDeGastosToolStripMenuItem.Name = "controlDeGastosToolStripMenuItem";
-            this.controlDeGastosToolStripMenuItem.Size = new System.Drawing.Size(12, 26);
+            this.controlDeGastosToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.controlDeGastosToolStripMenuItem.Text = "Control de gastos";
+            // 
+            // manejoDePlantacionesToolStripMenuItem
+            // 
+            this.manejoDePlantacionesToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.manejoDePlantacionesToolStripMenuItem.Name = "manejoDePlantacionesToolStripMenuItem";
+            this.manejoDePlantacionesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.manejoDePlantacionesToolStripMenuItem.Text = "Manejo de plantaciones";
+            this.manejoDePlantacionesToolStripMenuItem.Click += new System.EventHandler(this.manejoDePlantacionesToolStripMenuItem_Click);
             // 
             // insumosToolStripMenuItem
             // 
@@ -228,14 +239,14 @@
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // eliminarToolStripMenuItem1
             // 
             this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.eliminarToolStripMenuItem1.Text = "Eliminar";
             // 
             // lotesToolStripMenuItem
@@ -252,20 +263,20 @@
             // actualizarToolStripMenuItem1
             // 
             this.actualizarToolStripMenuItem1.Name = "actualizarToolStripMenuItem1";
-            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.actualizarToolStripMenuItem1.Text = "Actualizar";
             // 
             // agregarToolStripMenuItem2
             // 
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
-            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
             this.agregarToolStripMenuItem2.Text = "Agregar";
             this.agregarToolStripMenuItem2.Click += new System.EventHandler(this.agregarToolStripMenuItem2_Click);
             // 
             // eliminiarToolStripMenuItem
             // 
             this.eliminiarToolStripMenuItem.Name = "eliminiarToolStripMenuItem";
-            this.eliminiarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminiarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.eliminiarToolStripMenuItem.Text = "Eliminiar";
             // 
             // cicloToolStripMenuItem
@@ -281,14 +292,14 @@
             // agregarToolStripMenuItem3
             // 
             this.agregarToolStripMenuItem3.Name = "agregarToolStripMenuItem3";
-            this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(127, 22);
             this.agregarToolStripMenuItem3.Text = "Agregar";
             this.agregarToolStripMenuItem3.Click += new System.EventHandler(this.agregarToolStripMenuItem3_Click);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
             // sesiónToolStripMenuItem
@@ -313,68 +324,46 @@
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.Controls.Add(this.lblecha);
-            this.panel1.Location = new System.Drawing.Point(-11, 704);
+            this.panel1.Location = new System.Drawing.Point(0, 614);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1370, 25);
-            this.panel1.TabIndex = 2;
+            this.panel1.Size = new System.Drawing.Size(1199, 25);
+            this.panel1.TabIndex = 0;
             // 
             // lblecha
             // 
             this.lblecha.AutoSize = true;
-            this.lblecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblecha.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblecha.ForeColor = System.Drawing.Color.White;
-            this.lblecha.Location = new System.Drawing.Point(1144, 5);
+            this.lblecha.Location = new System.Drawing.Point(988, 0);
             this.lblecha.Name = "lblecha";
-            this.lblecha.Size = new System.Drawing.Size(51, 20);
+            this.lblecha.Size = new System.Drawing.Size(50, 18);
             this.lblecha.TabIndex = 0;
             this.lblecha.Text = "label1";
-            // 
-            // PContenedor
-            // 
-            this.PContenedor.Location = new System.Drawing.Point(-4, 81);
-            this.PContenedor.Name = "PContenedor";
-            this.PContenedor.Size = new System.Drawing.Size(1363, 625);
-            this.PContenedor.TabIndex = 3;
-            this.PContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PContenedor_Paint);
-            // 
-            // PLinea
-            // 
-            this.PLinea.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PLinea.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.PLinea.ForeColor = System.Drawing.Color.White;
-            this.PLinea.Location = new System.Drawing.Point(-4, 71);
-            this.PLinea.Margin = new System.Windows.Forms.Padding(2);
-            this.PLinea.Name = "PLinea";
-            this.PLinea.Size = new System.Drawing.Size(1367, 10);
-            this.PLinea.TabIndex = 4;
-            this.PLinea.Visible = false;
+            this.lblecha.Click += new System.EventHandler(this.lblecha_Click);
             // 
             // verRegistrosToolStripMenuItem
             // 
             this.verRegistrosToolStripMenuItem.Name = "verRegistrosToolStripMenuItem";
-            this.verRegistrosToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            this.verRegistrosToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.verRegistrosToolStripMenuItem.Text = "Ver registros";
+            this.verRegistrosToolStripMenuItem.Click += new System.EventHandler(this.verRegistrosToolStripMenuItem_Click);
             // 
-            // manejoDePlantacionesToolStripMenuItem
+            // FrmPrincipal
             // 
-            this.manejoDePlantacionesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.manejoDePlantacionesToolStripMenuItem.Name = "manejoDePlantacionesToolStripMenuItem";
-            this.manejoDePlantacionesToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
-            this.manejoDePlantacionesToolStripMenuItem.Text = "Manejo de plantaciones";
-            // 
-            // FrmPrincipal2
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
-            this.ClientSize = new System.Drawing.Size(1350, 729);
-            this.Controls.Add(this.PLinea);
-            this.Controls.Add(this.PContenedor);
+            this.ClientSize = new System.Drawing.Size(1200, 640);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PTop);
+            this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmPrincipal2";
-            this.Text = "FrmPrincipal2";
-            this.Load += new System.EventHandler(this.FrmPrincipal2_Load);
+            this.MainMenuStrip = this.msMenu;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FrmPrincipal";
+            this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.PTop.ResumeLayout(false);
             this.PTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -393,15 +382,13 @@
         #endregion
 
         private System.Windows.Forms.Panel PTop;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelBar;
-        private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.PictureBox btnMax;
-        private System.Windows.Forms.PictureBox btnReducir;
-        private System.Windows.Forms.PictureBox btnMin;
         private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.ToolStripMenuItem controlDeGastosToolStripMenuItem;
-     
+        private System.Windows.Forms.ToolStripMenuItem manejoDePlantacionesToolStripMenuItem;
+        private System.Windows.Forms.PictureBox btnReducir;
+        private System.Windows.Forms.PictureBox btnMin;
+        private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.PictureBox btnMax;
         private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
@@ -416,13 +403,13 @@
         private System.Windows.Forms.ToolStripMenuItem cicloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.Label labelBar;
         private System.Windows.Forms.ToolStripMenuItem sesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblecha;
-        private System.Windows.Forms.Panel PContenedor;
-        private System.Windows.Forms.Panel PLinea;
         private System.Windows.Forms.ToolStripMenuItem verRegistrosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manejoDePlantacionesToolStripMenuItem;
     }
 }
+

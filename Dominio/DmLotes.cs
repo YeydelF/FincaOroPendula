@@ -26,5 +26,11 @@ namespace Dominio
             return retorno;
         }
 
+        public DataTable Rlotes(string idlote)
+        {
+            DataTable tabla = new DataTable();
+         //   tabla = objetoDt.Rlotes(Convert.ToInt32(idlote));
+            return tabla;
+        }
     }
 }
