@@ -147,10 +147,31 @@ namespace Usuario
 
         private void manejoDePlantacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            abrirForm(new Forms.FrmManejoDePlantanciones());
+          
         }
 
         private void verRegistrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void administrarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios f = new FrmUsuarios();
+            f.ShowDialog();
+        }
+
+        private void gestiónDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manejoDePlantacionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            abrirForm(new Forms.FrmManejoDePlantanciones());
+        }
+
+        private void verRegistrosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             abrirForm(new Forms.FrmVerRegistros());
         }

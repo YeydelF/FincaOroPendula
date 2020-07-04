@@ -37,8 +37,8 @@
             this.btnReducir = new System.Windows.Forms.PictureBox();
             this.btnMin = new System.Windows.Forms.PictureBox();
             this.msMenu = new System.Windows.Forms.MenuStrip();
+            this.manejoDePlantacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlDeGastosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verRegistrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actividadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,12 +49,15 @@
             this.agregarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.sesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verRegistrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblecha = new System.Windows.Forms.Label();
             this.PContenedor = new System.Windows.Forms.Panel();
             this.PLinea = new System.Windows.Forms.Panel();
-            this.verRegistrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manejoDePlantacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestiónDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manejoDePlantacionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.verRegistrosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.PTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -167,7 +170,8 @@
             this.actividadesToolStripMenuItem,
             this.lotesToolStripMenuItem,
             this.cicloToolStripMenuItem,
-            this.sesiónToolStripMenuItem});
+            this.sesiónToolStripMenuItem,
+            this.gestiónDeUsuariosToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(11, 30);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
@@ -175,25 +179,22 @@
             this.msMenu.TabIndex = 0;
             this.msMenu.Text = "menuStrip1";
             // 
+            // manejoDePlantacionesToolStripMenuItem
+            // 
+            this.manejoDePlantacionesToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.manejoDePlantacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manejoDePlantacionesToolStripMenuItem1,
+            this.verRegistrosToolStripMenuItem1});
+            this.manejoDePlantacionesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.manejoDePlantacionesToolStripMenuItem.Name = "manejoDePlantacionesToolStripMenuItem";
+            this.manejoDePlantacionesToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.manejoDePlantacionesToolStripMenuItem.Text = "Manejo de plantaciones";
+            this.manejoDePlantacionesToolStripMenuItem.Click += new System.EventHandler(this.manejoDePlantacionesToolStripMenuItem_Click);
+            // 
             // controlDeGastosToolStripMenuItem
             // 
             this.controlDeGastosToolStripMenuItem.Name = "controlDeGastosToolStripMenuItem";
             this.controlDeGastosToolStripMenuItem.Size = new System.Drawing.Size(12, 26);
-            // 
-            // manejoDePlantacionesToolStripMenuItem
-            // 
-            this.manejoDePlantacionesToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.manejoDePlantacionesToolStripMenuItem.Name = "manejoDePlantacionesToolStripMenuItem";
-            this.manejoDePlantacionesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
-            this.manejoDePlantacionesToolStripMenuItem.Text = "Manejo de plantaciones";
-            this.manejoDePlantacionesToolStripMenuItem.Click += new System.EventHandler(this.manejoDePlantacionesToolStripMenuItem_Click);
-            // 
-            // verRegistrosToolStripMenuItem
-            // 
-            this.verRegistrosToolStripMenuItem.Name = "verRegistrosToolStripMenuItem";
-            this.verRegistrosToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
-            this.verRegistrosToolStripMenuItem.Text = "Ver registros";
-            this.verRegistrosToolStripMenuItem.Click += new System.EventHandler(this.verRegistrosToolStripMenuItem_Click);
             // 
             // insumosToolStripMenuItem
             // 
@@ -207,7 +208,7 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.agregarToolStripMenuItem.Text = "Gestionar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
@@ -227,12 +228,6 @@
             this.agregarToolStripMenuItem1.Text = "Gestionar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
-            // eliminarToolStripMenuItem1
-            // 
-            this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.eliminarToolStripMenuItem1.Text = "Eliminar";
-            // 
             // lotesToolStripMenuItem
             // 
             this.lotesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -242,24 +237,12 @@
             this.lotesToolStripMenuItem.Size = new System.Drawing.Size(56, 26);
             this.lotesToolStripMenuItem.Text = "Lotes";
             // 
-            // actualizarToolStripMenuItem1
-            // 
-            this.actualizarToolStripMenuItem1.Name = "actualizarToolStripMenuItem1";
-            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.actualizarToolStripMenuItem1.Text = "Actualizar";
-            // 
             // agregarToolStripMenuItem2
             // 
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
             this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.agregarToolStripMenuItem2.Text = "Gestionar";
             this.agregarToolStripMenuItem2.Click += new System.EventHandler(this.agregarToolStripMenuItem2_Click);
-            // 
-            // eliminiarToolStripMenuItem
-            // 
-            this.eliminiarToolStripMenuItem.Name = "eliminiarToolStripMenuItem";
-            this.eliminiarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.eliminiarToolStripMenuItem.Text = "Eliminiar";
             // 
             // cicloToolStripMenuItem
             // 
@@ -277,12 +260,6 @@
             this.agregarToolStripMenuItem3.Text = "Gestionar";
             this.agregarToolStripMenuItem3.Click += new System.EventHandler(this.agregarToolStripMenuItem3_Click);
             // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            // 
             // sesiónToolStripMenuItem
             // 
             this.sesiónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -298,6 +275,13 @@
             this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
+            // verRegistrosToolStripMenuItem
+            // 
+            this.verRegistrosToolStripMenuItem.Name = "verRegistrosToolStripMenuItem";
+            this.verRegistrosToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            this.verRegistrosToolStripMenuItem.Text = "Ver registros";
+            this.verRegistrosToolStripMenuItem.Click += new System.EventHandler(this.verRegistrosToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -341,17 +325,36 @@
             this.PLinea.TabIndex = 4;
             this.PLinea.Visible = false;
             // 
-            // verRegistrosToolStripMenuItem
+            // gestiónDeUsuariosToolStripMenuItem
             // 
-            this.verRegistrosToolStripMenuItem.Name = "verRegistrosToolStripMenuItem";
-            this.verRegistrosToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            this.gestiónDeUsuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.administrarUsuariosToolStripMenuItem});
+            this.gestiónDeUsuariosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.gestiónDeUsuariosToolStripMenuItem.Name = "gestiónDeUsuariosToolStripMenuItem";
+            this.gestiónDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(78, 26);
+            this.gestiónDeUsuariosToolStripMenuItem.Text = "Usuarios";
+            this.gestiónDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestiónDeUsuariosToolStripMenuItem_Click);
             // 
-            // manejoDePlantacionesToolStripMenuItem
+            // administrarUsuariosToolStripMenuItem
             // 
-            this.manejoDePlantacionesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.manejoDePlantacionesToolStripMenuItem.Name = "manejoDePlantacionesToolStripMenuItem";
-            this.manejoDePlantacionesToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
-            this.manejoDePlantacionesToolStripMenuItem.Text = "Manejo de plantaciones";
+            this.administrarUsuariosToolStripMenuItem.Name = "administrarUsuariosToolStripMenuItem";
+            this.administrarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.administrarUsuariosToolStripMenuItem.Text = "Administrar Usuarios";
+            this.administrarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.administrarUsuariosToolStripMenuItem_Click);
+            // 
+            // manejoDePlantacionesToolStripMenuItem1
+            // 
+            this.manejoDePlantacionesToolStripMenuItem1.Name = "manejoDePlantacionesToolStripMenuItem1";
+            this.manejoDePlantacionesToolStripMenuItem1.Size = new System.Drawing.Size(230, 22);
+            this.manejoDePlantacionesToolStripMenuItem1.Text = "Manejo de Plantaciones";
+            this.manejoDePlantacionesToolStripMenuItem1.Click += new System.EventHandler(this.manejoDePlantacionesToolStripMenuItem1_Click);
+            // 
+            // verRegistrosToolStripMenuItem1
+            // 
+            this.verRegistrosToolStripMenuItem1.Name = "verRegistrosToolStripMenuItem1";
+            this.verRegistrosToolStripMenuItem1.Size = new System.Drawing.Size(230, 22);
+            this.verRegistrosToolStripMenuItem1.Text = "Ver Registros";
+            this.verRegistrosToolStripMenuItem1.Click += new System.EventHandler(this.verRegistrosToolStripMenuItem1_Click);
             // 
             // FrmPrincipal2
             // 
@@ -410,5 +413,9 @@
         private System.Windows.Forms.Panel PLinea;
         private System.Windows.Forms.ToolStripMenuItem verRegistrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manejoDePlantacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestiónDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manejoDePlantacionesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem verRegistrosToolStripMenuItem1;
     }
 }

@@ -42,8 +42,9 @@ namespace Datos
             return tabla;
         }
 
-        public string Agregar(string nombre, string dueno, string variedad, DateTime fechaSiembra, double tamano)
+        public string Agregar(string nombre, string dueno, string variedad, DateTime fechaSiembra, double tamano, string Accion)
         {
+            MySqlParameter res;
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "AgregarLote";
             comando.CommandType = CommandType.StoredProcedure;
@@ -52,16 +53,16 @@ namespace Datos
             comando.Parameters.AddWithValue("@pVariedad", variedad);
             comando.Parameters.AddWithValue("@pFechaSiembra", fechaSiembra);
             comando.Parameters.AddWithValue("@pTamano", tamano);
-
+            comando.Parameters.AddWithValue("pAccion", Accion);
+            res = comando.Parameters.AddWithValue("pSalida", "");
+            comando.Parameters["pSalida"].Direction = ParameterDirection.Output;
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
+
             return res.Value.ToString();
-        }catch(Exception)
-            {
-                return "ERROR";
-            }
-            }
         }
+            
+       
 
     }
 }

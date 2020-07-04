@@ -10,7 +10,7 @@ namespace Datos
 {
    public class Conexion
     {
-    public MySqlConnection conexion = new MySqlConnection("server=localhost; database=bd_fincaoropendula; Uid=root; pwd=a1234;");
+    public MySqlConnection conexion = new MySqlConnection("server=localhost; database=bd_fincaoropendula; Uid=root; pwd=yeydel;");
 
      public MySqlConnection AbrirConexion()
      {
