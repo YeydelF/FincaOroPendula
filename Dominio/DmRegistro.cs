@@ -20,6 +20,7 @@ namespace Dominio
         public void AgregarInsumoRegistro(string idInsumo, string cantInsumo, string costoPorInsumo)
         {
             objetoDt.agregarInsumoRegistro(Convert.ToInt32(idInsumo), Convert.ToDouble(cantInsumo), Convert.ToDouble(costoPorInsumo));
+
         }
 
         public double obtenerPrecioInsumo(string idInsumo)
