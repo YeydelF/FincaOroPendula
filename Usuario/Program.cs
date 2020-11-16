@@ -17,7 +17,8 @@ namespace Usuario
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            frmLogin Main = new frmLogin();
+            //frmLogin Main = new frmLogin();
+            CalcularFecha Main = new CalcularFecha();
             //Forms.DGV Main = new Forms.DGV();
             //FrmPrincipal2 Main = new FrmPrincipal2();
             //frmGrafica Main = new frmGrafica();
